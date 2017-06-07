@@ -11,17 +11,23 @@ export default {
         type: {
             type: String,
             default: 'normal'
+        },
+        buttonStyle: {
+            type: Object,
+            default() {
+                return {}
+            }
         }
     },
 
     computed: {
         computedClass() {
             return {
-                'blue': this.color === 'blue',
-                'white': this.color === 'white',
-                'disable': this.color === 'disable',
-                'normal': this.type === 'normal',
-                'mini': this.type === 'mini'
+                'zs-button-blue': this.color === 'blue',
+                'zs-button-white': this.color === 'white',
+                'zs-button-disable': this.color === 'disable',
+                'zs-button-normal': this.type === 'normal',
+                'zs-button-mini': this.type === 'mini'
             }
         }
     },

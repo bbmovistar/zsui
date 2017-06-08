@@ -1,7 +1,6 @@
 .DS_Store
 build/
 config/
-node_modules/
 dist/
 static/
 test/

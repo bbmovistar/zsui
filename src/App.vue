@@ -10,7 +10,6 @@
 
 <script>
   import Button from '@/components/button/button.vue'
-  import t from '@/components/topTips/'
 
   export default {
     name: 'app',
@@ -22,7 +21,12 @@
         this.$toast.success('11')
       },
       clickaa() {
-        this.$toast.error('11')
+        this.$confirm({ title: '删除提示', msg: '真的确定删除？' })
+          .then(res => {
+            if (res) {
+              this.$toast.success('删除成功')
+            }
+          })
       }
     },
     created() {

@@ -1,0 +1,11 @@
+.DS_Store
+build/
+config/
+node_modules/
+dist/
+static/
+test/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+selenium-debug.log

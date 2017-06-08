@@ -1,42 +1,43 @@
 <template>
   <div id="app">
-    <div class='button'>
+    <div class='buttons'>
       <zs-button @click='click'></zs-button>
-      <zs-button color='white' type='mini' @click='clickaa'></zs-button>
+      <zs-button color='white' type='mini' @click='dialogFlag=true'></zs-button>
       <zs-button color='disable'></zs-button>
+      <zs-dialog :show='dialogFlag' @enter='enter' @close='close'></zs-dialog>
     </div>
   </div>
 </template>
 
 <script>
-  import Button from '@/components/button/button.vue'
-
   export default {
     name: 'app',
-    components: {
-      'zs-button': Button
+    data() {
+      return {
+        dialogFlag: false
+      }
     },
     methods: {
       click() {
-        this.$toast.success('11')
-      },
-      clickaa() {
         this.$confirm({ title: '删除提示', msg: '真的确定删除？' })
           .then(res => {
             if (res) {
               this.$toast.success('删除成功')
             }
           })
+      },
+      enter() {
+        this.dialogFlag = false
+      },
+      close() {
+        this.dialogFlag = false
       }
-    },
-    created() {
-
     }
   }
 
 </script>
 <style>
-  .button {
+  .buttons {
     padding: 20px;
     font-size: 0;
   }

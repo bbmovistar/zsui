@@ -8,9 +8,9 @@
     user-select: none;
     opacity: 0;
     z-index: 2000;
-    .confirm {
+    .zs-dialog {
         background: #fff;
-        width: 425px;
+        min-width: 425px;
         border-radius: 4px;
         display: inline-block;
         position: fixed;
@@ -25,10 +25,24 @@
             border-bottom: 1px solid #ddd;
             color: #333;
             font-size: 14px;
+            position: relative;
+            .close {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translate(0, -50%);
+                background: url('../../assets/icons/dialog-close.png') 50% 50% no-repeat;
+                cursor: pointer;
+                &:hover {
+                    background: url('../../assets/icons/dialog-close-hover.png') 50% 50% no-repeat;
+                }
+            }
         }
         .mainContent {
-            padding: 50px 110px 45px 110px;
-            text-align: center;
+            padding: 30px 15px 32px 15px;
             color: #666;
             font-size: 14px;
         }

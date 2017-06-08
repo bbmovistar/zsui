@@ -1,4 +1,5 @@
 export default {
+    name: 'zs-button',
     props: {
         text: {
             type: String,

@@ -1,0 +1,42 @@
+.zs-input {
+    position: relative;
+    font-size: 12px;
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    vertical-align: middle;
+    input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        border-radius: 6px;
+        border: 1px solid #999;
+        box-sizing: border-box;
+        color: #1f2d3d;
+        display: block;
+        font-size: inherit;
+        height: 100%;
+        line-height: 1;
+        outline: none;
+        padding: 3px 10px;
+        transition: border-color .2s cubic-bezier(0, 0, .19, -.03);
+        width: 100%;
+    }
+    input[readonly=readonly] {
+        border: none;
+        background-color: white;
+    }
+    input[disabled=disabled] {
+        border: none;
+        background-color: white;
+    }
+}
+
+.zs-input input:focus {
+    border-color: #5172fc;
+}
+
+.zs-input input:hover {
+    border-color: #5172fc;
+}

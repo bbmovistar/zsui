@@ -5,6 +5,9 @@
       <zs-button color='white' type='mini' @click='dialogFlag=true'></zs-button>
       <zs-button color='disable'></zs-button>
       <zs-dialog :show='dialogFlag' @enter='enter' @close='close'></zs-dialog>
+      <zs-pagination></zs-pagination>
+      <zs-select></zs-select>
+      <zs-input></zs-input>
     </div>
   </div>
 </template>

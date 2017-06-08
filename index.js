@@ -2,10 +2,16 @@ import topTips from './src/components/topTips/'
 import confirm from './src/components/confirm/'
 import button from './src/components/button/button.vue'
 import dialog from './src/components/dialog/dialog.vue'
+import input from './src/components/input/input.vue'
+import select from './src/components/select/select.vue'
+import pagination from './src/components/pagination/pagination.vue'
 
 const componentList = [
     button,
-    dialog
+    dialog,
+    input,
+    select,
+    pagination
 ]
 
 const install = (Vue, options) => {

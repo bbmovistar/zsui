@@ -152,7 +152,7 @@ event：{
 <zs-button
 	:color='white'
     	:text='点击'
-    	:type='mini'
+    :type='mini'
 	@click='click'>
 </zs-button>
 ~~~

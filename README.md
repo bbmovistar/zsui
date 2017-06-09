@@ -1,5 +1,14 @@
-## <center>input
+# usage
+~~~bash
+npm install zsui --save
+~~~
+~~~javscript
+import zsui from 'zsui'
+import 'zsui/dist/style.css'
+~~~
 
+# API
+## input
 配置：
 
 ~~~javascript
@@ -34,7 +43,7 @@ event: {
 </zs-input>
 ~~~
 
-## <center>select
+## select
 
 配置:
 
@@ -90,7 +99,7 @@ event: {
 ~~~
 
 
-## <center>pagination
+## pagination
 
 配置:
 
@@ -129,30 +138,43 @@ handleCurrentPage(val){
 }
 ~~~
 
-## <center>button
+## button
 
-配置:
+### options
 
-~~~javascript
-props: {
-        buttonStyle://Object 额外的自定义样式
-	text: //String 按钮文本
-	color: //String 按钮颜色('blue','white','disable') 默认blue
-	type: //String 按钮类型('normal','mini') 默认normal
-}
+|name|type|default|
+|-------|-----|-------|
+|buttonStyle|object|{}|
+|text|String|'点击'|
+|color|String|'blue'('blue','white','disable')|
+|type|String|'normal'('normal','mini')
 
-event：{
-	@click: //点击触发,color为disable不触发
-}
-~~~
+### event
 
-示例：
+|name|description|
+|--|--|
+|click|color为'disable'不触发|
+
+### example
 
 ~~~html
 <zs-button
     color='white'
-    text='点击'
+    text='猛击'
     type='mini'
     @click='click'>
 </zs-button>
+~~~
+
+## toast
+
+~~~javascript
+this.$toast({
+	msg:'这是信息',
+	type:'success',//success或者error
+	duration:''3000
+})
+//简单的写法
+this.$toast.success('成功')
+this.$toast.error('失败')
 ~~~

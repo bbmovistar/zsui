@@ -35,6 +35,7 @@ exports.cssLoaders = function (options) {
     // Extract CSS when that option is specified
     // (which is the case during production build)
     if (options.extract) {
+      console.log(loaders)
       return ExtractTextPlugin.extract({
         use: loaders,
         fallback: 'vue-style-loader'

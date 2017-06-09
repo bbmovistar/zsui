@@ -1,9 +1,15 @@
 .DS_Store
 build/
 config/
-dist/
+src/
 static/
 test/
+node_modules/
+.babelrc
+.editorconfig
+.gitignore
+.postcssrc.js
+index.html
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

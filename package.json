@@ -1,14 +1,15 @@
 {
   "name": "zsui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Vue.js project",
   "author": "chq-93-17 <2908707828@qq.com>",
   "private": false,
-  "main": "index.js",
+  "main": "dist/zsui.min.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
-    "build": "node build/build.js",
+    "probuild": "node build/build.js",
+    "build": "webpack --config build/package.js -p",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e"

@@ -150,9 +150,9 @@ event：{
 
 ~~~html
 <zs-button
-	color='white'
+    color='white'
     text='点击'
     type='mini'
-	@click='click'>
+    @click='click'>
 </zs-button>
 ~~~

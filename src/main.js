@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import './libs/reset.css'
-import ZSUI from '../dist/zsui.min.js'
-import '../dist/style.css'
+import ZSUI from './components/'
 
 Vue.use(ZSUI)
 Vue.config.productionTip = false

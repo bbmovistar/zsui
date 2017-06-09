@@ -1,6 +1,6 @@
 {
   "name": "zsui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Vue.js project",
   "author": "chq-93-17 <2908707828@qq.com>",
   "private": false,
@@ -15,11 +15,11 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
-    "velocity-animate": "^1.5.0",
-    "vue": "^2.3.3",
-    "vue-router": "^2.3.1"
+    "velocity-animate": "^1.5.0"
   },
   "devDependencies": {
+    "vue": "^2.3.3",
+    "vue-router": "^2.3.1",
     "autoprefixer": "^6.7.2",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",

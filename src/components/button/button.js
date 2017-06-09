@@ -12,12 +12,6 @@ export default {
         type: {
             type: String,
             default: 'normal'
-        },
-        buttonStyle: {
-            type: Object,
-            default() {
-                return {}
-            }
         }
     },
 

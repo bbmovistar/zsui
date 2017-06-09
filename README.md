@@ -144,7 +144,6 @@ handleCurrentPage(val){
 
 |name|type|default|
 |-------|-----|-------|
-|buttonStyle|object|{}|
 |text|String|'点击'|
 |color|String|'blue'('blue','white','disable')|
 |type|String|'normal'('normal','mini')
@@ -174,7 +173,48 @@ this.$toast({
 	type:'success',//success或者error
 	duration:''3000
 })
-//简单的写法
+//简易写法
 this.$toast.success('成功')
 this.$toast.error('失败')
 ~~~
+
+## confirm
+
+~~~javascript
+this.$confirm({
+	msg:'这是信息',//default '这是提示信息'
+	title:'这是标题',//default '提示'
+	enterText:'确定按钮文本',//default '确定'
+	closeText:'取消按钮文本'//default '取消'
+}).then(res=>{
+	if(res){
+	    console.log('按了确定键')
+	}else{
+	    console.log('按了取消键')
+	}
+})
+~~~
+
+## dialog
+
+### options
+
+|name|type|default|
+|-------|-----|-------|
+|show|Boolean|false|
+|title|String|'这是一个对话框'|
+|enterText|String|'确定'
+|closeText|String|'取消'
+
+### slot
+
+|name|description|
+|--|--|
+|main|dialog主区域|
+
+### event
+
+|name|description|
+|--|--|
+|enter|确定按钮回调|
+|close|取消按钮回调|

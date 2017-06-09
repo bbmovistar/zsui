@@ -1,5 +1,5 @@
 <template>
-    <span class='zs-button' :class='computedClass' @click='click' :style='buttonStyle'>{{text}}</span>
+    <span class='zs-button' :class='computedClass' @click='click'>{{text}}</span>
 </template>
 <script>
     import button from './button.js'

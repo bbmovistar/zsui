@@ -1,7 +1,7 @@
 <template>
     <div class='zs-topTips'>
-        <img :src="imgSrc">
-        <span>{{msg}}</span>
+        <span class='icon iconfont' :class='typeClass'></span>
+        <span class='msg'>{{msg}}</span>
     </div>
 </template>
 <script>

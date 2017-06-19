@@ -8,7 +8,7 @@
     user-select: none;
     opacity: 0;
     z-index: 2000;
-    .zs-dialog {
+    .zs-alert {
         background: #fff;
         box-sizing: border-box;
         min-width: 520px;
@@ -53,6 +53,43 @@
                 &:hover {
                     color: #979797;
                 }
+            }
+        }
+        .mainContent-wrapper {
+            text-align: center;
+            .mainContent {
+                display: inline-block;
+                position: relative;
+                margin: 40px 0 40px 0;
+                .msg-title {
+                    font-size: 18px;
+                    margin-bottom: 12px;
+                    line-height: 18px;
+                }
+                .msg {
+                    font-size: 12px;
+                    line-height: 12px;
+                    color: #999999;
+                }
+                .alert-icon {
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -22px;
+                    left: -77px;
+                    font-size: 44px;
+                    display: inline-block;
+                    width: 44px;
+                    line-height: 44px;
+                }
+            }
+            .error {
+                color: #FF5500;
+            }
+            .success {
+                color: #87D068;
+            }
+            .warn {
+                color: #FFAA00;
             }
         }
         .btns {

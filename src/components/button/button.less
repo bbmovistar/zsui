@@ -1,50 +1,64 @@
+@import '../../assets/less/common.less';
 .zs-button {
     display: inline-block;
     box-sizing: border-box;
     vertical-align: middle;
-    height: 26px;
-    line-height: 26px;
-    font-size: 14px;
+    line-height: @button-height - 2px;
+    font-size: 12px;
     user-select: none;
+    border-radius: @button-borderRadius;
     text-align: center;
-    transition: all .5s ease;
+    transition: all .3s ease;
+    font-size: 0;
+    .iconfont, .text {
+        vertical-align: middle;
+    }
+    .iconfont {
+        display: inline-block;
+        width: 16px;
+        line-height: 16px;
+        font-size: 14px;
+        text-align: center;
+        margin-right: 9px;
+    }
+    .text {
+        font-size: 12px;
+    }
 }
 
 .zs-button-blue {
-    background: #5f7eff;
-    border: 1px solid #5f7eff;
-    color: #fff;
+    background: @button-blue-backgroundColor;
+    border: 1px solid @button-blue-backgroundColor;
+    color: @button-blue-color;
     cursor: pointer;
-    border-radius: 4px;
     &:hover {
-        background: #5172fc;
+        background: @button-blue-hoverBackGroundColor;
+        border-color: @button-blue-hoverBackGroundColor;
     }
 }
 
 .zs-button-white {
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    color: #666;
+    background: @button-white-backgroundColor;
+    border: 1px solid @button-white-borderColor;
+    color: @button-white-color;
     cursor: pointer;
-    border-radius: 4px;
     &:hover {
-        background: #ebeefc;
-        border-color: #5f7eff;
+        background: @button-white-hoverBackGroundColor;
+        border-color: @button-white-hoverBorderColor;
     }
 }
 
 .zs-button-disable {
-    background: #e5e5e5;
-    border: 1px solid #e5e5e5;
-    color: #999;
-    border-radius: 4px;
+    background: @button-disable-backgroundColor;
+    border: 1px solid @button-disable-borderColor;
+    color: @button-disable-color;
     cursor: not-allowed;
 }
 
 .zs-button-normal {
-    padding: 0 22px;
+    padding: 0 20px;
 }
 
 .zs-button-mini {
-    width: 50px;
+    padding: 0 10px;
 }

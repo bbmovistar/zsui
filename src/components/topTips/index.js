@@ -3,7 +3,7 @@ import topTips from './topTips.vue'
 import Velocity from 'velocity-animate'
 
 let topTipsConstructor = Vue.extend(topTips)
-let ZINDEX = 5000
+let _zIndex = 5000
 
 let tips = options => {
     let instaceController = document.getElementById('instaceController')
@@ -21,7 +21,7 @@ let tips = options => {
     let instance = new topTipsConstructor({
         data: options
     }).$mount()
-    instance.$el.style.zIndex = ZINDEX++
+    instance.$el.style.zIndex = _zIndex++
     instaceController.appendChild(instance.$el)
     Velocity(instance.$el,
         {
@@ -54,6 +54,19 @@ tips.error = options => {
     }
     if (typeof options === 'object') {
         options.type = 'error'
+    }
+    tips(options)
+}
+
+tips.warn = options => {
+    if (typeof options === 'string') {
+        options = {
+            msg: options,
+            type: 'warn'
+        }
+    }
+    if (typeof options === 'object') {
+        options.type = 'warn'
     }
     tips(options)
 }

@@ -1,0 +1,66 @@
+@import '../../assets/less/common.less';
+.paging {
+    overflow: hidden;
+    display: inline-block;
+    li:not(.ellipses) {
+        box-sizing: border-box;
+        float: left;
+        margin-left: 5px;
+        width: @paging-item-width;
+        line-height: @paging-item-height - 2px;
+        text-align: center;
+        cursor: pointer;
+        background: @paging-item-backgroundColor;
+        border-radius: 2px;
+        font-size: 14px;
+        color: @paging-item-color;
+        border: 1px solid transparent;
+        user-select: none;
+        &:hover:not(.paging-disable):not(.active) {
+            background: #E6F3FC;
+        }
+        &.rotate {
+            transform: rotate(180deg);
+            font-size: 12px;
+        }
+        &.active {
+            border: 1px solid @paging-item-activeBackgroundColor;
+            background: @paging-item-activeBackgroundColor;
+            color: #fff;
+        }
+        &.paging-disable {
+            color: @paging-item-disableColor;
+        }
+    }
+    li:first-child {
+        margin: 0;
+        font-size: 12px;
+    }
+    li:last-child {
+        font-size: 12px;
+    }
+    .ellipses {
+        box-sizing: border-box;
+        float: left;
+        margin-left: 5px;
+        width: @paging-item-width;
+        line-height: @paging-item-height - 2px;
+        text-align: center;
+        cursor: pointer;
+        background: transparent;
+        border-radius: 2px;
+        font-size: 14px;
+        color: @paging-item-color;
+        border: 1px solid transparent;
+        user-select: none;
+        span {
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #B8B8B8;
+            position: relative;
+            top: -3px;
+        }
+    }
+}

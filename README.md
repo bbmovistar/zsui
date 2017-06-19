@@ -145,22 +145,24 @@ handleCurrentPage(val){
 |name|type|default|
 |-------|-----|-------|
 |text|String|'点击'|
-|color|String|'blue'('blue','white','disable')|
-|type|String|'normal'('normal','mini')
+|type|String|'blue'('blue','white','disable')|
+|widthType|String|'normal'('normal','mini')|
+|icon|String|(iconfont名称)
+
 
 ### event
 
 |name|description|
 |--|--|
-|click|color为'disable'不触发|
+|click|type为'disable'不触发|
 
 ### example
 
 ~~~html
 <zs-button
-    color='white'
+    type='white'
     text='猛击'
-    type='mini'
+    widthType='mini'
     @click='click'>
 </zs-button>
 ~~~
@@ -176,6 +178,7 @@ this.$toast({
 //简易写法
 this.$toast.success('成功')
 this.$toast.error('失败')
+this.$toast.warn('警告')
 ~~~
 
 ## confirm
@@ -195,6 +198,29 @@ this.$confirm({
 })
 ~~~
 
+## alert
+
+~~~javascript
+this.$alert({
+	title:'提示',//default '提示'
+	enterText:'确定按钮文本',//default '确定'
+	enterAlign: 'center',//default 'center'
+	type:'success',//default 'success'
+	msgTitle:'标题'//default '标题'
+	msg:'信息',//default '这是提示信息'
+}).then(res=>{
+	if(res){
+	    console.log('按了确定键')
+	}else{
+	    console.log('点击X')
+	}
+})
+//简易写法(需要传入标题和副标题)
+this.$alert.success({msgTitle:'成功',msg:'abc'})
+this.$alert.error({msgTitle:'失败',msg:'abc'})
+this.$alert.warn({msgTitle:'警告',msg:'abc'})
+~~~
+
 ## dialog
 
 ### options
@@ -204,7 +230,7 @@ this.$confirm({
 |show|Boolean|false|
 |title|String|'这是一个对话框'|
 |enterText|String|'确定'
-|closeText|String|'取消'
+|enterAlign|String|'right'
 
 ### slot
 

@@ -10,8 +10,12 @@ export default {
     },
 
     computed: {
-        imgSrc() {
-            return require(`../../assets/icons/${this.type}.png`)
+        typeClass() {
+            return {
+                'icon-success': this.type === 'success',
+                'icon-error': this.type === 'error',
+                'icon-warn': this.type === 'warn'
+            }
         }
     },
 

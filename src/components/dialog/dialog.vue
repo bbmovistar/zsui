@@ -2,15 +2,15 @@
     <div class='mask' v-if='show'>
         <div class='zs-dialog' ref='dialog'>
             <div class='title'>
+                <i class='line'></i>
                 {{title}}
-                <i class='close' @click='close'></i>
+                <i class='iconfont icon-close' @click='close'></i>
             </div>
             <div class='mainContent'>
                 <slot name='main'></slot>
             </div>
-            <div class='btns'>
-                <zs-button :style='{marginRight:"10px"}' :text='enterText' @click='enter'></zs-button>
-                <zs-button color='white' :text='closeText' @click='close'></zs-button>
+            <div class='btns' :style='{textAlign:enterAlign}'>
+                <zs-button :text='enterText' @click='enter'></zs-button>
             </div>
         </div>
     </div>

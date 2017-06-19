@@ -1,47 +1,23 @@
 <template>
   <div id="app">
-    <div class='buttons'>
-      <zs-button @click='click'></zs-button>
-      <zs-button color='white' type='mini' @click='dialogFlag=true'></zs-button>
-      <zs-button color='disable'></zs-button>
-      <zs-dialog :show='dialogFlag' @enter='enter' @close='close'></zs-dialog>
-      <zs-pagination></zs-pagination>
-      <zs-select></zs-select>
-      <zs-input></zs-input>
-    </div>
+    <zs-main :leftMenuList='leftMenuData'></zs-main>
   </div>
 </template>
 
 <script>
+  import main from '@/components/main/main.vue'
+  import data from './data.js'
+
   export default {
     name: 'app',
     data() {
       return {
-        dialogFlag: false
+        leftMenuData: data
       }
     },
-    methods: {
-      click() {
-        this.$confirm({ title: '删除提示', msg: '真的确定删除？' })
-          .then(res => {
-            if (res) {
-              this.$toast.success('删除成功')
-            }
-          })
-      },
-      enter() {
-        this.dialogFlag = false
-      },
-      close() {
-        this.dialogFlag = false
-      }
+    components: {
+      'zs-main': main
     }
   }
 
 </script>
-<style>
-  .buttons {
-    padding: 20px;
-    font-size: 0;
-  }
-</style>

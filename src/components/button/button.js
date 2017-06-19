@@ -5,24 +5,28 @@ export default {
             type: String,
             default: '点击'
         },
-        color: {
+        type: {
             type: String,
             default: 'blue'
         },
-        type: {
+        widthType: {
             type: String,
             default: 'normal'
+        },
+        icon: {
+            type: String,
+            default: ''
         }
     },
 
     computed: {
         computedClass() {
             return {
-                'zs-button-blue': this.color === 'blue',
-                'zs-button-white': this.color === 'white',
-                'zs-button-disable': this.color === 'disable',
-                'zs-button-normal': this.type === 'normal',
-                'zs-button-mini': this.type === 'mini'
+                'zs-button-blue': this.type === 'blue',
+                'zs-button-white': this.type === 'white',
+                'zs-button-disable': this.type === 'disable',
+                'zs-button-normal': this.widthType === 'normal',
+                'zs-button-mini': this.widthType === 'mini'
             }
         }
     },

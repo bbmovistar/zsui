@@ -1,5 +1,8 @@
 <template>
-    <span class='zs-button' :class='computedClass' @click='click'>{{text}}</span>
+    <div class='zs-button' :class='computedClass' @click='click'>
+        <span class='iconfont' :class='icon' v-if='icon!==""&&widthType!=="mini"'></span>
+        <span class='text'>{{text}}</span>
+    </div>
 </template>
 <script>
     import button from './button.js'

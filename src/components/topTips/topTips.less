@@ -1,3 +1,4 @@
+@import '../../assets/less/common.less';
 .zs-topTips {
     position: fixed;
     top: 0%;
@@ -6,19 +7,28 @@
     background: #fff;
     user-select: none;
     display: inline-block;
-    padding: 0 40px;
+    padding: @toast-padding;
     border-radius: 4px;
-    box-shadow: 4px 6px 10px 3px rgba(40, 40, 40, .08);
-    height: 60px;
-    line-height: 60px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    line-height: @toast-height;
     font-size: 0;
-    img {
+    .icon {
         vertical-align: middle;
-        margin-right: 4px;
+        font-size: 14px;
     }
-    span {
+    .msg {
         vertical-align: middle;
         font-size: 12px;
         color: #666;
+        margin-left: 9px;
+    }
+    .icon-success {
+        color: #87D068;
+    }
+    .icon-error {
+        color: #FF5500;
+    }
+    .icon-warn {
+        color: #FFAA00;
     }
 }

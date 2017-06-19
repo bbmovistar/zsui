@@ -1,17 +1,26 @@
 import topTips from '@/components/topTips/'
 import confirm from '@/components/confirm/'
+import alert from '@/components/alert/'
 import button from '@/components/button/button.vue'
 import dialog from '@/components/dialog/dialog.vue'
 import input from '@/components/input/input.vue'
 import select from '@/components/select/select.vue'
-import pagination from '@/components/pagination/pagination.vue'
+import paging from '@/components/paging/paging.vue'
+
+if (document.head) {
+    let link = document.createElement('link')
+    link.setAttribute('rel', 'stylesheet')
+    link.setAttribute('href', '//at.alicdn.com/t/font_bsmkicwek16skyb9.css')
+    document.head.appendChild(link)
+}
+
 
 const componentList = [
     button,
     dialog,
     input,
     select,
-    pagination
+    paging
 ]
 
 const install = (Vue, options) => {
@@ -20,5 +29,6 @@ const install = (Vue, options) => {
     }
     Vue.prototype.$toast = topTips
     Vue.prototype.$confirm = confirm
+    Vue.prototype.$alert = alert
 }
 export default { install }

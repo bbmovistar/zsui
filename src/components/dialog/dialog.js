@@ -16,9 +16,9 @@ export default {
             type: String,
             default: '确定'
         },
-        closeText: {
+        enterAlign: {
             type: String,
-            default: '取消'
+            default: 'right'
         }
     },
     watch: {

@@ -1,11 +1,14 @@
 <template>
     <div class='mask' id='zs-confirm'>
         <div class='confirm' ref='confirm'>
-            <div class='title'>{{title}}</div>
+            <div class='title'>
+                <i class='line'></i> {{title}}
+                <i class='iconfont icon-close' @click='close'></i>
+            </div>
             <div class='mainContent'>{{msg}}</div>
             <div class='btns'>
-                <zs-button :style='{marginRight:"10px"}' :text='enterText' @click='enter'></zs-button>
-                <zs-button color='white' :text='closeText' @click='close'></zs-button>
+                <zs-button type='white' :text='closeText' @click='close' :style='{marginRight:"10px"}'></zs-button>
+                <zs-button :text='enterText' @click='enter'></zs-button>
             </div>
         </div>
     </div>

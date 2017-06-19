@@ -12,6 +12,7 @@
     import leftMenu from '../leftMenu/leftMenu.vue'
     import mainRouter from '../mainRouter/mainRouter.vue'
     export default {
+        name: 'zs-main',
         props: {
             leftMenuList: {
                 type: Array,

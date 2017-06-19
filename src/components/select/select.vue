@@ -3,7 +3,7 @@
         <div class="zs-select_box" @click.stop="isDown = !isDown">
             <input type="text" class="zs-select_input" :placeholder="disabled? '' : placeholder" :disabled="disabled" :readonly="readonly"
                 v-model="selectItem" @blur="handleBlur">
-            <i class="zs-select_icon" :class="{opened: isDown}" v-if="!disabled"></i>
+            <i class="zs-select_icon iconfont icon-select-arrow-down" :class="{opened: isDown}" v-if="!disabled"></i>
         </div>
         <div class="zs-select_dropDown_box" v-show="isDown && !disabled" :class="{isDown: isDown}">
             <ul v-if="list.length <= 0" class="zs-select-_dropDown_menu">

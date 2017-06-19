@@ -1,0 +1,49 @@
+.zs-breadcrumb{
+    position: relative;
+    margin-top: 6px;
+    line-height: 46px;
+    height: 46px;
+    border-bottom: 1px solid #d8d8d8;
+    .zs-breadcrumb-marker{
+        position: absolute;
+        top: 13px;
+        left: 0;
+        width: 4px;
+        height: 20px;
+        background-color: #178AEA;
+    }
+    .zs-breadcrumb-item{
+        font-size: 12px;
+        cursor: pointer;
+        .zs-breadcrumb-item_separator{
+            font-size: 14px;
+            color: #999;
+            margin-left: 5px;
+        }
+    }
+    .zs-breadcrumb-item:hover{
+        color: #178AEA;
+    }
+
+    .zs-breadcrumb-item:first-child{
+        margin-left: 10px;
+        font-size: 14px;
+    }
+    .zs-breadcrumb-item:last-child:hover{
+        color: #000;
+        cursor: inherit;
+    }
+    .zs-breadcrumb-item:last-child .zs-breadcrumb-item_separator{
+        display: none;
+    }
+    .right-option{
+        position: absolute;
+        right: 0;
+        top: -3px;
+        font-size: 0;
+        .zs-button + .zs-button{
+            margin-left: 10px;
+        }
+    }
+}
+

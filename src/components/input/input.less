@@ -1,42 +1,61 @@
 .zs-input {
-    position: relative;
-    font-size: 12px;
-    display: inline-block;
-    width: 200px;
-    height: 30px;
-    vertical-align: middle;
-    input {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        background-color: #fff;
-        border-radius: 6px;
-        border: 1px solid #999;
-        box-sizing: border-box;
-        color: #1f2d3d;
-        display: block;
-        font-size: inherit;
-        height: 100%;
-        line-height: 1;
-        outline: none;
-        padding: 3px 10px;
-        transition: border-color .2s cubic-bezier(0, 0, .19, -.03);
-        width: 100%;
-    }
-    input[readonly=readonly] {
-        border: none;
-        background-color: white;
-    }
-    input[disabled=disabled] {
-        border: none;
-        background-color: white;
-    }
+  position: relative;
+  font-size: 12px;
+  display: inline-block;
+  width: 138px;
+  height: 30px;
+  vertical-align: middle;
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    color: #666;
+    display: block;
+    font-size: inherit;
+    height: 100%;
+    line-height: 30px;
+    outline: none;
+    padding: 3px 10px;
+    transition: border-color .2s cubic-bezier(0, 0, .19, -.03);
+    width: 100%;
+  }
+  input[readonly=readonly] {
+    border: none;
+    background-color: white;
+  }
+  input[disabled=disabled] {
+    border: none;
+    background-color: white;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #d9d9d9;
+    opacity: 1;
+  }
+
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #d9d9d9;
+    opacity: 1;
+  }
+
+  input:-ms-input-placeholder {
+    color: #d9d9d9;
+    opacity: 1;
+  }
+
+  input::-webkit-input-placeholder {
+    color: #d9d9d9;
+    opacity: 1;
+  }
 }
 
 .zs-input input:focus {
-    border-color: #5172fc;
+  border-color: #0088E9;
 }
 
 .zs-input input:hover {
-    border-color: #5172fc;
+  border-color: #0088E9;
 }

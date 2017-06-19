@@ -1,92 +1,103 @@
 .zs-select {
-    display: inline-block;
-    position: relative;
-    font-size: 12px;
-    vertical-align: middle;
-    .zs-select_box {
-        .zs-select_icon {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            right: 10px;
-            color: #bfcbd9;
-            font-size: 12px; //transition: transform .3s;
-            //transform: translateY(-50%) rotate(180deg);
-            line-height: 16px;
-            top: 7px;
-            cursor: pointer;
-            background: url('../../assets/icons/select-down.png') no-repeat center;
-            transform: rotate(45deg);
-            background-size: 80%;
-        }
-        .zs-select_icon.opened {
-            top: 60%; //transition: transform .3s;
-            transform: translateY(-50%) rotate(225deg);
-        } //.zs-select_icon:before{
-        //  content: "";
-        //}
-        //.zs-select_icon:after{
-        //  content: "";
-        //  height: 100%;
-        //  width: 0;
-        //  display: inline-block;
-        //  vertical-align: middle;
-        //}
-        input {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-color: #fff;
-            background-image: none;
-            border-radius: 6px;
-            border: 1px solid #999;
-            box-sizing: border-box;
-            color: #1f2d3d;
-            display: block;
-            font-size: inherit;
-            height: 30px;
-            line-height: 1;
-            outline: none;
-            padding: 3px 10px;
-            transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
-            width: 100%;
-            cursor: pointer;
-        }
-        .zs-select_input:hover {
-            border-color: #5f7eff;
-        }
+  display: inline-block;
+  position: relative;
+  width: 138px;
+  font-size: 12px;
+  vertical-align: middle;
+  .zs-select_box {
+    .zs-select_icon {
+      position: absolute;
+        width: 13px;
+        height: 13px;
+        right: 7px;
+        color: #666;
+        font-size: 12px;
+        line-height: 16px;
+        top: 8px;
+        cursor: pointer;
+        transition: all .3s;
+      background-size: 80%;
     }
-    .zs-select_dropDown_box {
-        position: absolute;
-        top: 32px;
-        width: 100%;
-        max-height: 158px;
-        border: 1px solid #999;
-        border-radius: 4px;
-        box-sizing: border-box;
-        z-index: 1001;
-        background-color: #fff;
-        overflow: auto;
-        opacity: 0; //transition: all 0.2s;
-        li {
-            font-size: 12px;
-            position: relative;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: #48576a;
-            height: 36px;
-            line-height: 36px;
-            box-sizing: border-box;
-            cursor: pointer;
-            padding: 0 10px;
-        }
-        li:hover {
-            background-color: #EBEEFC;
-        }
+    .zs-select_icon.opened {
+      transform: rotate(180deg);
     }
-    .zs-select_dropDown_box.isDown {
-        animation: fadeInUp .3s ease;
-        opacity: 1;
+    input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-color: #fff;
+      background-image: none;
+      border-radius: 2px;
+      border: 1px solid #d9d9d9;
+      box-sizing: border-box;
+      color: #666;
+      display: block;
+      font-size: inherit;
+      height: 30px;
+      line-height: 30px;
+      outline: none;
+      padding: 3px 10px;
+      transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+      width: 100%;
+      cursor: pointer;
     }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: #d9d9d9;
+      opacity: 1;
+    }
+
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: #d9d9d9;
+      opacity: 1;
+    }
+
+    input:-ms-input-placeholder {
+      color: #d9d9d9;
+      opacity: 1;
+    }
+
+    input::-webkit-input-placeholder {
+      color: #d9d9d9;
+      opacity: 1;
+    }
+    .zs-select_input:hover {
+      border-color: #178AEA;
+    }
+  }
+  .zs-select_dropDown_box {
+    position: absolute;
+    top: 32px;
+    width: 100%;
+    max-height: 166px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    box-sizing: border-box;
+    z-index: 1001;
+    background-color: #fff;
+    overflow: auto;
+    opacity: 0; //transition: all 0.2s;
+    li {
+      font-size: 12px;
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #666;
+      height: 32px;
+      line-height: 36px;
+      box-sizing: border-box;
+      cursor: pointer;
+      padding: 0 0 0 15px;
+    }
+    li:hover {
+      background-color: #E6F3FC;
+    }
+    li.isSelected {
+      color: #178AEA;
+    }
+  }
+  .zs-select_dropDown_box.isDown {
+    animation: fadeInUp .3s ease;
+    opacity: 1;
+  }
 }

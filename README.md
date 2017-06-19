@@ -19,8 +19,8 @@ props: {
 	readonly: //Boolean 是否只读,
 	maxlength: //Number 最大字数,
 	minlength: //Number 最小字数,
-	value: //[String, number] 
-} 
+	value: //[String, number]
+}
 
 event: {
 	@blur: //失焦事件
@@ -65,7 +65,7 @@ event: {
 }
 ~~~
 
-示例： 
+示例：
 
 基本使用：
 
@@ -119,23 +119,11 @@ event：{
 示例：
 
 ~~~html
-<zs-pagination
-	:totalPage="totalPage"
-	:size="pageSize"
-	:page="currentPage"
-	@size-change="handleSizeChange"
-	@current-page="handleCurrentChange">
-</zs-pagination>
-~~~
-
-~~~javascript
-handleSizeChange(val){
-	val //新的size值
-}
-
-handleCurrentPage(val){
-	val //新的当前页
-}
+<zs-paging
+	:current='1'
+	:all='10'
+	@paging='paging'>
+</zs-paging>
 ~~~
 
 ## button
@@ -244,3 +232,108 @@ this.$alert.warn({msgTitle:'警告',msg:'abc'})
 |--|--|
 |enter|确定按钮回调|
 |close|取消按钮回调|
+
+##cascader
+
+配置：
+
+~~~javascript
+props: {
+	data: //Array, 下拉选项
+	value: //Array, 可设置默认值
+	placeholder: String,
+	disabled: //Boolean,
+	allowClear: //Boolean, 是否有删除按钮， 默认为true
+}
+
+event: {
+	@change: //绑定值发生变化时触发
+}
+~~~
+
+示例：
+
+~~~html
+<zs-cascader
+	:data="data"
+	v-model="val"
+	@change="handleChange"
+>
+</zs-cascader>
+~~~
+~~~javascript
+
+data: [
+	{
+		label: 'test1',
+		value: 'test1',
+		children: [
+			{lable: 'test11', value: 'test11'},
+			{lable: 'test12', value: 'test12'},
+		]
+	},
+	{
+		label: 'test2',
+		value: 'test2',
+		children: [
+			{
+				lable: 'test21',
+				value: 'test21'
+			},
+			{
+				lable: 'test22',
+				value: 'test22',
+				children: [
+					{label: 'test221', value: '221'}
+				]
+			},
+		]
+	}
+]
+
+val: ['test2', 'test22', 'test221']
+
+handleChange(val){
+	//val为新值
+}
+~~~
+
+##breadcrumb
+
+示例：
+
+~~~html
+<zs-breadcrumb>
+	<zs-breadcrumb-item :to='{name: "routeA"}'>招生信息</zs-breadcrumb-item>
+	<zs-breadcrumb-item :to='{name: "routeB"}'>学生信息</zs-breadcrumb-item>
+	<span slot="right-option">
+		<zs-button :text="添加"></zs-button>
+	</span>
+</zs-breadcrumb>
+~~~
+
+##main
+~~~html
+<zs-main
+:leftMenuList='[{
+      "routerName": "schoolManage",
+      "title": "nihaoya",
+      "isPermissions": false,
+      "icon": 'icon-success',
+      "items": [
+          {
+              "itemName": "kaixin",
+              "routerName": "bbb"
+          }
+      ]
+}]'
+:leftMenuConfig='{
+  titleName: 'title',
+      iconName: 'icon',
+      permissionName: 'isPermissions',
+      listItemName: 'items',
+      itemName: 'itemName',
+      routerName: 'routerName'
+</zs-main>
+~~~
+

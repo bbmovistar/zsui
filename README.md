@@ -233,7 +233,7 @@ this.$alert.warn({msgTitle:'警告',msg:'abc'})
 |enter|确定按钮回调|
 |close|取消按钮回调|
 
-##cascader
+## cascader
 
 配置：
 
@@ -298,7 +298,7 @@ handleChange(val){
 }
 ~~~
 
-##breadcrumb
+## breadcrumb
 
 示例：
 
@@ -312,7 +312,7 @@ handleChange(val){
 </zs-breadcrumb>
 ~~~
 
-##main
+## main
 ~~~html
 <zs-main
 :leftMenuList='[{

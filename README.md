@@ -99,22 +99,7 @@ event: {
 ~~~
 
 
-## pagination
-
-配置:
-
-~~~javascript
-props: {
-	totalPage: //Number, 总页数,
-	size: //Number, 每页条数,
-	page: //Number, 当前页
-}
-
-event：{
-	@size-change: //size发生改变时触发
-	@current-change: //当前页发生改变时触发
-}
-~~~
+## paging
 
 示例：
 

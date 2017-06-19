@@ -1,11 +1,16 @@
 import topTips from '@/components/topTips/'
 import confirm from '@/components/confirm/'
 import alert from '@/components/alert/'
+
 import button from '@/components/button/button.vue'
 import dialog from '@/components/dialog/dialog.vue'
 import input from '@/components/input/input.vue'
 import select from '@/components/select/select.vue'
 import paging from '@/components/paging/paging.vue'
+import main from '@/components/main/main.vue'
+import cascader from '@/components/cascader/cascader.vue'
+import breadcrumb from '@/components/breadcrumb/breadcrumb.vue'
+import breadcrumbItem from '@/components/breadcrumb/breadcrumb-item.vue'
 
 if (document.head) {
     let link = document.createElement('link')
@@ -20,7 +25,11 @@ const componentList = [
     dialog,
     input,
     select,
-    paging
+    paging,
+    main,
+    cascader,
+    breadcrumb,
+    breadcrumbItem
 ]
 
 const install = (Vue, options) => {

@@ -6,6 +6,8 @@
     font-size: 12px;
     background-color: #fff;
     border-radius: 4px;
+    vertical-align: middle;
+    user-select: none;
     .zs-cascader-input{
         position: relative;
         display: inline-block;
@@ -45,24 +47,25 @@
     .icon-select-arrow-down{
         position: absolute;
         width: 13px;
-        height: 13px;
+        /*height: 13px;*/
         right: 7px;
         color: #666;
         font-size: 12px;
-        line-height: 16px;
+        line-height: 13px;
         top: 8px;
         cursor: pointer;
         transition: all .3s;
     }
-    .icon-clearn{
+    .icon-clean{
         visibility: hidden;
         position: absolute;
         width: 13px;
-        height: 13px;
+    /*    height: 13px;*/
         right: 7px;
+        background: #fff;
         color: #666;
         font-size: 12px;
-        line-height: 16px;
+        line-height: 13px;
         top: 8.5px;
         cursor: pointer;
         z-index: 2;
@@ -98,6 +101,7 @@
         display: block;
         width: 100%;
         line-height: 32px;
+        cursor: pointer;
         span{
             padding-left: 18px;
         }
@@ -121,7 +125,7 @@
         //background-color: #178aea;
     }
 }
-.zs-cascader:hover .icon-clearn{
+.zs-cascader:hover .icon-clean{
     visibility: visible;
 }
 

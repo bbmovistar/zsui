@@ -1,30 +1,16 @@
 <template>
     <div class="zs-cascader">
-        <input type="text" :placeholder="label? '' : placeholder"
-               class="zs-cascader-input"
-               value=""
-               readonly="!filterable"
-               autocomplete="off"
-               @click="toggleMenu"
-        >
+        <input type="text" :placeholder="label? '' : placeholder" class="zs-cascader-input" value="" readonly="!filterable" autocomplete="off"
+            @click="toggleMenu">
         <span class="zs-cascader-label">{{label}}</span>
-        <i
-            v-if="allowClear && defaultValue.length"
-            class="iconfont icon-clearn"
-            @click.stop="clear">
+        <i v-if="allowClear && defaultValue.length" class="iconfont icon-clean" @click.stop="clear">
         </i>
-        <i
-            class="zs-cascader-select-icon iconfont icon-select-arrow-down"
-            :class="open?'zs-cascader-select-icon-opened' : '' ">
+        <i class="zs-cascader-select-icon iconfont icon-select-arrow-down" :class="open?'zs-cascader-select-icon-opened' : '' ">
         </i>
         <div ref="menu" v-show="open" :style="style" class="zs-cascader-dropDown">
             <div>
-                <casmenu v-for="(item, index) in path"
-                         v-model="path[index]"
-                         :data="getMenuData(index)"
-                         :_key="index"
-                         @change="changeMenuValue"
-                         :key="item.index">
+                <casmenu v-for="(item, index) in path" v-model="path[index]" :data="getMenuData(index)" :_key="index" @change="changeMenuValue"
+                    :key="item.index">
                 </casmenu>
             </div>
         </div>
@@ -34,10 +20,10 @@
     import casmenu from './menu.vue'
     import emitter from '../../mixins/emitter'
 
-    export default{
+    export default {
         name: 'zs-cascader',
         mixins: [emitter],
-        components: {casmenu},
+        components: { casmenu },
         data: () => ({
             defaultValue: [],
             container: null,
@@ -49,7 +35,7 @@
         props: {
             popupContainer: {
                 type: Function,
-                default: ()=> document.body
+                default: () => document.body
             },
             position: {
                 type: String,
@@ -58,7 +44,7 @@
             data: Array,
             value: {
                 type: Array,
-                default: ()=> []
+                default: () => []
             },
             placeholder: {
                 type: String,
@@ -78,10 +64,10 @@
             }
         },
         watch: {
-            path(val){
+            path(val) {
                 let value = [], label = [], opt = this.data;
-                for(let i of val){
-                    if(i < 0) break;
+                for (let i of val) {
+                    if (i < 0) break;
                     value.push(opt[i].value);
                     label.push(opt[i].label);
                     //下一次遍历以上一次的children为数据源
@@ -115,10 +101,10 @@
                 const clientLeft = element.clientLeft || container.clientLeft || 0;
                 let top, left;
 
-                if(container === document.body){
+                if (container === document.body) {
                     top = this.getScroll(true);
                     left = this.getScroll();
-                }else{
+                } else {
                     top = container.scrollTop - container_rect.top;
                     left = container.scrollLeft - container_rect.left;
                 }
@@ -130,63 +116,63 @@
                     bottom: el_rect.bottom + top - clientTop
                 }
             },
-            init(){
+            init() {
                 this.defaultValue = JSON.parse(JSON.stringify(this.value))
-                let res = [],opt = this.data;
-                for(let val of this.value){
-                    for(let [i,item] of opt.entries()){
-                        if(item.value == val){
+                let res = [], opt = this.data;
+                for (let val of this.value) {
+                    for (let [i, item] of opt.entries()) {
+                        if (item.value == val) {
                             res.push(i)
                             opt = opt[i].children;
                             break;
                         }
                     }
                 }
-                if(opt) res.push(-1)
+                if (opt) res.push(-1)
                 this.path = res;
             },
-            clear(){
+            clear() {
                 this.path = [-1];
             },
-            setPosition(){
-                if(!this.$el){
+            setPosition() {
+                if (!this.$el) {
                     return
                 }
                 let p = this.getOffset(this.$el, this.container);
                 this.style = {
-                    top: p.bottom  + 'px',
+                    top: p.bottom + 'px',
                     left: p.left + 'px'
                 }
             },
-            getMenuData(index){
+            getMenuData(index) {
                 let menu = this.data;
-                for(let i=0;i < index;i++){
+                for (let i = 0; i < index; i++) {
                     const s = this.path[i];
-                    if(menu[s].children){
-                        menu  = menu[s].children;
-                    }else{
+                    if (menu[s].children) {
+                        menu = menu[s].children;
+                    } else {
                         menu = null;
                         break;
                     }
                 }
                 return menu;
             },
-            toggleMenu(){
-                if(this.disabled) return;
+            toggleMenu() {
+                if (this.disabled) return;
                 this.open = !this.open;
-                if(this.open){
-                    this.$nextTick(()=>{
+                if (this.open) {
+                    this.$nextTick(() => {
                         this.setPosition();
                     })
                 }
             },
-            changeMenuValue(key,i){
+            changeMenuValue(key, i) {
                 this.$set(this.path, key, i)
-                if(this.getMenuData(key+1)){
-                    this.$set(this.path, key+1, -1)
-                    this.path.splice(key+2,this.path.length-1-key-1);
-                }else{
-                    this.path.splice(key+1,this.path.length-1-key);
+                if (this.getMenuData(key + 1)) {
+                    this.$set(this.path, key + 1, -1)
+                    this.path.splice(key + 2, this.path.length - 1 - key - 1);
+                } else {
+                    this.path.splice(key + 1, this.path.length - 1 - key);
                     this.open = false;
                 }
             }
@@ -195,29 +181,30 @@
             //点击其他位置收起
             document.addEventListener('click', (e) => {
                 let clickOnMenu = this.$refs.menu.contains(e.target)
-                if ((!this.$el.contains(e.target)) && !clickOnMenu ) this.open = false
+                if ((!this.$el.contains(e.target)) && !clickOnMenu) this.open = false
             })
         },
-        mounted(){
+        mounted() {
             this.init();
             this.container = this.popupContainer()
             this.$refs.menu.style.position = this.position;
             this.container.appendChild(this.$refs.menu);
 
-            this.$nextTick(()=>{
+            this.$nextTick(() => {
                 this.setPosition();
             })
-            window.addEventListener('resize',()=> {
+            window.addEventListener('resize', () => {
                 clearTimeout(this.resizeTimer);
-                this.resizeTimer = setTimeout(()=> {
+                this.resizeTimer = setTimeout(() => {
                     this.setPosition();
                 }, 200)
             })
         },
-        beforeDestroy(){
+        beforeDestroy() {
             this.container.removeChild(this.$refs.menu);
         }
     }
+
 </script>
 <style lang="less">
     @import "cascader.less";

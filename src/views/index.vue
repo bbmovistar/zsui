@@ -1,6 +1,15 @@
 <template>
     <div>
-        index
+        <zs-breadcrumb>
+            <zs-breadcrumb-item :to='{name:"bbb"}'>aaa</zs-breadcrumb-item>
+            <zs-breadcrumb-item>bbb</zs-breadcrumb-item>
+            <span slot='right-option'>
+                <zs-button @click='$toast.error("error")' text='error' icon='icon-export'></zs-button>
+                <zs-button @click='$toast.warn("warn")' text='warn'></zs-button>
+                <zs-button @click='zeff' text='反反复复' icon='icon-edit'></zs-button>
+                <zs-button @click='zeff' text='反反复复' icon='icon-export'></zs-button>
+            </span>
+        </zs-breadcrumb>
         <zs-paging :current='current' :all='15' @paging='paging'></zs-paging>
         <zs-button @click='aaa=true'>111</zs-button>
         <zs-button type='white' @click='confirm' text='success'></zs-button>
@@ -11,6 +20,8 @@
         <zs-button @click='$toast.warn("warn")' text='warn'></zs-button>
         <zs-button @click='zeff' text='反反复复' icon='icon-edit'></zs-button>
         <zs-button @click='zeff' text='反反复复' icon='icon-export'></zs-button>
+        <zs-cascader :data="data1" v-model="testVal"></zs-cascader>
+
     </div>
 </template>
 <script>
@@ -18,7 +29,56 @@
         data() {
             return {
                 aaa: false,
-                current: 1
+                current: 1,
+                data1: [{
+                    value: 'beijing',
+                    label: '人文系',
+                    children: [
+                        {
+                            value: 'gugong',
+                            label: '故宫'
+                        },
+                        {
+                            value: 'tiantan',
+                            label: '天坛'
+                        },
+                        {
+                            value: 'wangfujing',
+                            label: '王府井'
+                        }
+                    ]
+                }, {
+                    value: 'jiangsu',
+                    label: '信息系',
+                    children: [
+                        {
+                            value: 'nanjing',
+                            label: '电子技术',
+                            children: [
+                                {
+                                    value: 'fuzimiao',
+                                    label: '电气自动化',
+                                }
+                            ]
+                        },
+                        {
+                            value: 'suzhou',
+                            label: '苏州',
+                            children: [
+                                {
+                                    value: 'zhuozhengyuan',
+                                    label: '拙政园',
+                                },
+                                {
+                                    value: 'shizilin',
+                                    label: '狮子林狮子',
+                                }
+                            ]
+                        }
+                    ],
+                }],
+                testVal: ['jiangsu', 'nanjing', 'fuzimiao']
+
             }
         },
         methods: {

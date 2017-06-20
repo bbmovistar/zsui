@@ -99,22 +99,7 @@ event: {
 ~~~
 
 
-## pagination
-
-配置:
-
-~~~javascript
-props: {
-	totalPage: //Number, 总页数,
-	size: //Number, 每页条数,
-	page: //Number, 当前页
-}
-
-event：{
-	@size-change: //size发生改变时触发
-	@current-change: //当前页发生改变时触发
-}
-~~~
+## paging
 
 示例：
 
@@ -233,7 +218,7 @@ this.$alert.warn({msgTitle:'警告',msg:'abc'})
 |enter|确定按钮回调|
 |close|取消按钮回调|
 
-##cascader
+## cascader
 
 配置：
 
@@ -298,7 +283,7 @@ handleChange(val){
 }
 ~~~
 
-##breadcrumb
+## breadcrumb
 
 示例：
 
@@ -312,7 +297,7 @@ handleChange(val){
 </zs-breadcrumb>
 ~~~
 
-##main
+## main
 ~~~html
 <zs-main
 :leftMenuList='[{

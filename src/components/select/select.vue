@@ -138,13 +138,15 @@
             },
             handleBlur() {
                 //
+            },
+            clickFunc(e) {
+                console.log(1)
+                if (!this.$el.contains(e.target)) this.isDown = false
             }
         },
         created() {
             //点击其他位置收起
-            document.addEventListener('click', (e) => {
-                if (!this.$el.contains(e.target)) this.isDown = false
-            })
+            document.addEventListener('click', this.clickFunc)
         },
         mounted() {
             if (this.value) {
@@ -161,6 +163,9 @@
 
                 })
             }
+        },
+        beforeDestroy() {
+            document.removeEventListener('click', this.clickFunc)
         }
     }
 

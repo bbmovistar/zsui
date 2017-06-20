@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import index from '../views/index.vue'
 import main from '../views/main.vue'
+
 Vue.use(VueRouter)
 
 export default new VueRouter({

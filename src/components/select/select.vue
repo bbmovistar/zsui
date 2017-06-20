@@ -140,7 +140,6 @@
                 //
             },
             clickFunc(e) {
-                console.log(1)
                 if (!this.$el.contains(e.target)) this.isDown = false
             }
         },

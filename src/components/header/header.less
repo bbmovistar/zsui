@@ -1,5 +1,6 @@
 @import '../../assets/less/common.less';
 @line-height: 20px;
+@z-index: 100;
 #header {
     background: #172658;
     height: @header-height;
@@ -65,26 +66,66 @@
         .system-list {
             position: absolute;
             top: @header-height;
-            width: 100%;
             background: #172658;
-            z-index: 100;
+            z-index: @z-index;
+            font-size: 0;
+            background: #FFFFFF;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.17);
+            padding: 0 20px;
+            left: 0;
             li {
-                padding: 0 20px;
-                line-height: @header-height;
+                line-height: 37px;
                 color: #fff;
                 font-size: 12px;
+                display: block;
+                border-bottom: 1px solid #F7F7F7;
+                font-size: 12px;
+                color: #666666;
+                white-space: nowrap;
+                text-align: left;
+                &:hover {
+                    color: #3B9CFF;
+                }
             }
         }
     }
-    .name {
+    .exit {
+        margin-right: 50px;
+    }
+    .role {
+        cursor: pointer;
+        ul {
+            min-width: 100%;
+            position: absolute;
+            background: #FFFFFF;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.17);
+            z-index: @z-index;
+            left: 0;
+            top: @header-height;
+            padding: 0 20px;
+            box-sizing: border-box;
+            li {
+                line-height: 39px;
+                font-size: 12px;
+                color: #666666;
+                white-space: nowrap;
+                display: block;
+                border-bottom: 1px solid #F7F7F7;
+                &:hover {
+                    color: #3B9CFF;
+                }
+            }
+        }
+    }
+    .exit, .role, .name {
         float: right;
         height: 100%;
         padding: 0 20px;
-        margin-right: 50px;
         font-size: 12px;
         color: #FFFFFF;
         position: relative;
         line-height: @header-height;
+        text-decoration: none;
         .left-line {
             position: absolute;
             left: 0;

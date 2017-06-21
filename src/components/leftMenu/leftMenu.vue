@@ -1,11 +1,11 @@
 <template>
     <div id='left-menu'>
         <ul class='menu-content'>
-            <li v-for='item in list' v-if='item[config.permissionName]' @click='openMenu(item)' class='first-menu-list'>
+            <li v-for='item in computedList' v-if='item[config.permissionName]' @click='openMenu(item)' class='first-menu-list'>
                 <div class='first-menu' :class='{"active":item.light}'>
                     <span class='iconfont item-icon' :class='item[config.iconName]'></span>
                     <span :class='{"blodFont":item.light}'>{{item[config.titleName]}}</span>
-                    <span class='iconfont' :class='[item.click?"icon-menu-arrow-down":"icon-menu-arrow-up"]'></span>
+                    <span class='iconfont' v-if='item[config.listItemName]' :class='[item.click?"icon-menu-arrow-down":"icon-menu-arrow-up"]'></span>
                 </div>
                 <transition @before-enter='itemBeforeEnter' @enter='itemEnter' @leave='itemLeave'>
                     <ul v-show='item.click' class='second-item-list'>

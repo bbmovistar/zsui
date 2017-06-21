@@ -3,16 +3,8 @@ const menuList = [
         "isOpen": true,
         "routerName": "schoolManage",
         "title": "学校管理",
-        "isPermissions": false,
-        "icon": 'icon-success',
-        "items": [
-            {
-                "itemName": "年级管理",
-                "isOpen": true,
-                "routerName": "bbb",
-                "addHighlight": false
-            }
-        ]
+        "isPermissions": true,
+        "icon": 'icon-success'
     },
     {
         "isOpen": false,
@@ -24,7 +16,7 @@ const menuList = [
             {
                 "itemName": "班级信息",
                 "isOpen": true,
-                "routerName": "classMassage",
+                "routerName": "classInfo",
                 "addHighlight": false
             }
         ]
@@ -39,7 +31,7 @@ const menuList = [
             {
                 "itemName": "教师信息",
                 "isOpen": true,
-                "routerName": "teachersInformation",
+                "routerName": "teacherInfo",
                 "addHighlight": false
             }
         ]
@@ -87,7 +79,7 @@ const menuList = [
             {
                 "itemName": "我的签到",
                 "isOpen": true,
-                "routerName": "aaa",
+                "routerName": "mySignIn",
                 "addHighlight": false
             },
             {

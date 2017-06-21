@@ -3,11 +3,11 @@ export default {
     props: {
         current: {
             type: Number,
-            require: true
+            required: true
         },
         all: {
             type: Number,
-            require: true
+            required: true
         }
     },
     computed: {

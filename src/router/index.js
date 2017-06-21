@@ -3,23 +3,37 @@ import VueRouter from 'vue-router'
 
 import index from '../views/index.vue'
 import main from '../views/main.vue'
+import detail from '../views/detail.vue'
+import detail2 from '../views/detail2.vue'
+
 Vue.use(VueRouter)
 
 export default new VueRouter({
     routes: [
         {
-            name: 'bbb',
-            path: '/bbb',
+            name: 'schoolManage',
+            path: '/schoolManage',
             component: index
         },
         {
-            name: 'aaa',
-            path: '/mySignIn',
+            name: 'classInfo',
+            path: '/classInfo',
             component: main
-        }, {
-            name: 'classMassage',
-            path: '/classMassage',
+        },
+        {
+            name: 'teacherInfo',
+            path: '/teacherInfo',
             component: index
+        },
+        {
+            name: 'detail',
+            path: '/detail',
+            component: detail
+        },
+        {
+            name: 'detail2',
+            path: '/detail2',
+            component: detail2
         }
     ]
 })

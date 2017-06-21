@@ -1,8 +1,8 @@
 <template>
     <div id='main'>
-        <zs-header></zs-header>
+        <zs-header :systemList='systemList' :systemConfig='systemConfig' :currentSystem='currentSystem'></zs-header>
         <div id='content'>
-            <zs-leftMenu :list='leftMenuList' :propConfig='leftMenuConfig'></zs-leftMenu>
+            <zs-leftMenu :list='leftMenuList' :leftMenuConfig='leftMenuConfig' :filterRouteName='filterRouteName'></zs-leftMenu>
             <zs-mainRouter></zs-mainRouter>
         </div>
     </div>
@@ -14,11 +14,35 @@
     export default {
         name: 'zs-main',
         props: {
+            currentSystem: {
+                type: String,
+                require: true
+            },
+            systemList: {
+                type: Array,
+                require: true
+            },
+            systemConfig: {
+                type: Object,
+                default() {
+                    return {}
+                }
+            },
+            roleList: {
+                type: Array,
+                require: true
+            },
             leftMenuList: {
                 type: Array,
                 require: true
             },
             leftMenuConfig: {
+                type: Object,
+                default() {
+                    return {}
+                }
+            },
+            filterRouteName: {
                 type: Object,
                 default() {
                     return {}

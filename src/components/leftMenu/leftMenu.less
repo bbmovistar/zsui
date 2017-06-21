@@ -4,6 +4,9 @@
     width: @leftMenu-width;
     background: @leftMenu-backgroundColor;
     overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
     user-select: none;
     .menu-content {
         position: relative;
@@ -36,7 +39,7 @@
                 &.active {
                     color: @leftMenu-text-activecolor;
                 }
-                .blodFont{
+                .blodFont {
                     font-weight: bold;
                 }
                 .icon-menu-arrow-down, .icon-menu-arrow-up {

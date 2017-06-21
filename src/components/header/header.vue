@@ -1,6 +1,6 @@
 <template>
     <div id='header'>
-        <div class='logo'>
+        <div class='logo' @click.stop='home'>
             <span class='iconfont icon-logo'></span>
             <span class='logo-text'>浙江正实科技</span>
             <span class='line logo-line'></span>
@@ -11,21 +11,23 @@
                 <span class='iconfont' :class='[systemListFlag?"icon-select-arrow-up":"icon-select-arrow-down"]'></span>
             </div>
             <ul class='system-list' v-show='systemListFlag'>
-                <li v-for='item in systemList' @click='link(item)'>{{item[config.name]}}</li>
+                <li v-for='item in systemList' @click='link(item)'>{{item[config.systemConfig.name]}}</li>
             </ul>
         </div>
         <a :href='exitUrl' class='exit'>
             退出系统
             <span class='line left-line'></span>
         </a>
-        <div class='role'>
-            角色：管理员
-            <ul>
-                <!--<li v-for=''></li>-->
+        <div class='role' @mouseenter='roleListFlag=true' @mouseleave='roleListFlag=false'>
+            角色：{{currentRole}}
+            <ul v-show='roleListFlag'>
+                <li v-for='item in roleList' @click.stop='roleListClick(item)'>
+                    切换：{{item[config.roleConfig.name]}}
+                </li>
             </ul>
         </div>
         <div class='name'>
-            欢迎您,陈华卿
+            欢迎您，{{username}}
             <span class='line right-line'></span>
         </div>
     </div>

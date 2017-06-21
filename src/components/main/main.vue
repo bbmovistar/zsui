@@ -1,8 +1,12 @@
 <template>
     <div id='main'>
-        <zs-header :systemList='systemList' :systemConfig='systemConfig' :currentSystem='currentSystem'></zs-header>
+        <!--头部-->
+        <zs-header :systemList='systemList' :systemConfig='systemConfig' :currentSystem='currentSystem' :roleList='roleList' :roleConfig='roleConfig'
+            :currentRole='currentRole' @roleClick='roleClick' :homeUrl='homeUrl' :exitUrl='exitUrl' :username='username'></zs-header>
         <div id='content'>
+            <!--侧边栏-->
             <zs-leftMenu :list='leftMenuList' :leftMenuConfig='leftMenuConfig' :filterRouteName='filterRouteName'></zs-leftMenu>
+            <!--主路由-->
             <zs-mainRouter></zs-mainRouter>
         </div>
     </div>
@@ -14,39 +18,75 @@
     export default {
         name: 'zs-main',
         props: {
+            //当前系统
             currentSystem: {
                 type: String,
-                require: true
+                required: true
             },
+            //系统列表
             systemList: {
                 type: Array,
-                require: true
+                required: true
             },
+            //系统字段配置
             systemConfig: {
                 type: Object,
                 default() {
                     return {}
                 }
             },
+            //当前角色
+            currentRole: {
+                type: String,
+                required: true
+            },
+            //角色列表
             roleList: {
                 type: Array,
-                require: true
+                required: true
             },
+            /*角色字段配置*/
+            roleConfig: {
+                type: Object,
+                default() {
+                    return {}
+                }
+            },
+            //侧边栏列表
             leftMenuList: {
                 type: Array,
-                require: true
+                required: true
             },
+            //侧边栏字段配置
             leftMenuConfig: {
                 type: Object,
                 default() {
                     return {}
                 }
             },
+            //路由多匹配
             filterRouteName: {
                 type: Object,
                 default() {
                     return {}
                 }
+            },
+            username: {
+                type: String,
+                required: true
+            },
+            exitUrl: {
+                type: String,
+                required: true
+            },
+            homeUrl: {
+                type: String,
+                required: true
+            }
+        },
+        methods: {
+            roleClick($event) {
+                this.$emit('roleClick', $event)
             }
         },
         components: {

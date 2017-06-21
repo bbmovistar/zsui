@@ -4,15 +4,15 @@ export default {
     props: {
         list: {
             type: Array,
-            require: true
+            required: true
         },
         leftMenuConfig: {
             type: Object,
-            require: true
+            required: true
         },
         filterRouteName: {
             type: Object,
-            require: true
+            required: true
         }
     },
     data() {
@@ -110,7 +110,7 @@ export default {
                 }
                 if (value.hasOwnProperty(this.config.listItemName)) {
                     for (let itemValue of value[this.config.listItemName]) {
-                        if (name === itemValue[this.config.routerName]|| this.filter[itemValue[this.config.routerName]].includes(name)) {
+                        if (name === itemValue[this.config.routerName] || this.filter[itemValue[this.config.routerName]].includes(name)) {
                             value.click = true
                             value.light = true
                             itemValue.light = true

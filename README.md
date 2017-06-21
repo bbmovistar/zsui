@@ -300,11 +300,12 @@ handleChange(val){
 ## main
 ~~~html
 <zs-main
+//侧边栏
 :leftMenuList='[{
       "routerName": "schoolManage",
       "title": "nihaoya",
       "isPermissions": false,
-      "icon": 'icon-success',
+      "icon": "icon-success",
       "items": [
           {
               "itemName": "kaixin",
@@ -313,12 +314,55 @@ handleChange(val){
       ]
 }]'
 :leftMenuConfig='{
-  titleName: 'title',
-      iconName: 'icon',
-      permissionName: 'isPermissions',
-      listItemName: 'items',
-      itemName: 'itemName',
-      routerName: 'routerName'
+      titleName: "title",
+      iconName: "icon",
+      permissionName: "isPermissions",
+      listItemName: "items",
+      itemName: "itemName",
+      routerName: "routerName"
+}'
+
+//路由多匹配
+:filterRouteName='{
+	list:["list1","list2"],
+	detail:["detail1","detail2"]
+}'
+
+//系统切换
+currentSystem='system name'
+:systemList='[
+	{
+		name:"system name",
+		url:"system url"
+	}
+]'
+:systemConfig='{
+	name:"name",
+	url:"url"
+}'
+
+//角色切换
+currentRole='name'
+:roleList='[
+	{
+		name:"rolename",
+		key:"key"
+	}
+]'
+:roleConfig='{
+	name:"name",
+	key:"key"
+}'
+
+//跳转
+:exitUrl='url'
+:homeUrl='url'
+
+//用户名称
+:username='name'
+
+//选择角色事件
+@roleClick='roleClick'
 </zs-main>
 ~~~
 

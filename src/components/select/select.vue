@@ -78,15 +78,19 @@
             watchOptionList() {
                 this.selectItem = '';
                 this.list = this.optionList;
-                if (this.value !== null) {
-                    for (let index of this.list) {
-                        if (this.value === index.value) {
-                            this.selectItem = index.label
-                            return
-                        } else {
-                            this.selectItem = ''
+                if(this.readyonly){
+                    if (this.value !== null) {
+                        for (let index of this.list) {
+                            if (this.value === index.value) {
+                                this.selectItem = index.label
+                                return
+                            } else {
+                                this.selectItem = ''
+                            }
                         }
                     }
+                }else{
+                    this.selectItem = this.value
                 }
             },
             watchValue(newVal) {
@@ -95,11 +99,6 @@
                     if (newVal === null) {
                         this.selectItem = ''
                     } else {
-                        //                        this.list.forEach((item) => {
-                        //                            if(this.value === item.value){
-                        //                                this.selectItem = item.label
-                        //                            }
-                        //                        })
                         for (let index of this.list) {
                             if (this.value === index.value) {
                                 this.selectItem = index.label

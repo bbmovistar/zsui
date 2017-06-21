@@ -2,7 +2,7 @@
     <div class="zs-cascader">
         <input type="text" :placeholder="label? '' : placeholder" class="zs-cascader-input" value=""
                readonly="!filterable" autocomplete="off"
-               @click="toggleMenu">
+               @click.stop="toggleMenu">
         <span class="zs-cascader-label">{{label}}</span>
         <i v-if="allowClear && defaultValue.length" class="iconfont icon-clean" @click.stop="clear">
         </i>

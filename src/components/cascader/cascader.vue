@@ -1,16 +1,19 @@
 <template>
     <div class="zs-cascader">
-        <input type="text" :placeholder="label? '' : placeholder" class="zs-cascader-input" value="" readonly="!filterable" autocomplete="off"
-            @click="toggleMenu">
+        <input type="text" :placeholder="label? '' : placeholder" class="zs-cascader-input" value=""
+               readonly="!filterable" autocomplete="off"
+               @click="toggleMenu">
         <span class="zs-cascader-label">{{label}}</span>
         <i v-if="allowClear && defaultValue.length" class="iconfont icon-clean" @click.stop="clear">
         </i>
-        <i class="zs-cascader-select-icon iconfont icon-select-arrow-down" :class="open?'zs-cascader-select-icon-opened' : '' ">
+        <i class="zs-cascader-select-icon iconfont icon-select-arrow-down"
+           :class="open?'zs-cascader-select-icon-opened' : '' ">
         </i>
         <div ref="menu" v-show="open" :style="style" class="zs-cascader-dropDown">
             <div>
-                <casmenu v-for="(item, index) in path" v-model="path[index]" :data="getMenuData(index)" :_key="index" @change="changeMenuValue"
-                    :key="item.index">
+                <casmenu v-for="(item, index) in path" v-model="path[index]" :data="getMenuData(index)" :_key="index"
+                         @change="changeMenuValue"
+                         :key="item.index">
                 </casmenu>
             </div>
         </div>
@@ -23,7 +26,7 @@
     export default {
         name: 'zs-cascader',
         mixins: [emitter],
-        components: { casmenu },
+        components: {casmenu},
         data: () => ({
             defaultValue: [],
             container: null,
@@ -175,14 +178,23 @@
                     this.path.splice(key + 1, this.path.length - 1 - key);
                     this.open = false;
                 }
+            },
+            clickFunc(e) {
+                if(this.$refs.menu){
+                    let clickOnMenu = this.$refs.menu.contains(e.target)
+                    if ((!this.$el.contains(e.target)) && !clickOnMenu) this.open = false
+                }
+            },
+            resizeFunc() {
+                clearTimeout(this.resizeTimer);
+                this.resizeTimer = setTimeout(() => {
+                    this.setPosition();
+                }, 200)
             }
         },
         created() {
             //点击其他位置收起
-            document.addEventListener('click', (e) => {
-                let clickOnMenu = this.$refs.menu.contains(e.target)
-                if ((!this.$el.contains(e.target)) && !clickOnMenu) this.open = false
-            })
+            document.addEventListener('click', this.clickFunc)
         },
         mounted() {
             this.init();
@@ -193,15 +205,12 @@
             this.$nextTick(() => {
                 this.setPosition();
             })
-            window.addEventListener('resize', () => {
-                clearTimeout(this.resizeTimer);
-                this.resizeTimer = setTimeout(() => {
-                    this.setPosition();
-                }, 200)
-            })
+            window.addEventListener('resize', this.resizeFunc)
         },
         beforeDestroy() {
             this.container.removeChild(this.$refs.menu);
+            document.removeEventListener('click', this.clickFunc)
+            window.removeEventListener('resize', this.resizeFunc)
         }
     }
 

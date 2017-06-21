@@ -1,8 +1,6 @@
 <template>
     <div id='main-router'>
-        <div class='main-router-wrapper'>
-            <router-view></router-view>
-        </div>
+        <router-view></router-view>
     </div>
 </template>
 <style lang="less" scoped>

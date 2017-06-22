@@ -16,7 +16,6 @@ export default {
         }
     },
     data() {
-        let filterObj = {}
         let config = Object.assign({
             titleName: 'title',
             iconName: 'icon',
@@ -25,19 +24,8 @@ export default {
             itemName: 'itemName',
             routerName: 'routerName'
         }, this.leftMenuConfig)
-
-        for (let index of this.list) {
-            filterObj[index[config.routerName]] = []
-            if (index.hasOwnProperty(config.listItemName)) {
-                for (let item of index[config.listItemName]) {
-                    filterObj[item[config.routerName]] = []
-                }
-            }
-        }
-        let filter = Object.assign(filterObj, this.filterRouteName)
         return {
-            config: config,
-            filter: filter
+            config: config
         }
     },
     watch: {
@@ -65,6 +53,19 @@ export default {
                 }
                 return this.list
             }
+        },
+        'filter': function () {
+            let filterObj = {}
+            for (let index of this.list) {
+                filterObj[index[this.config.routerName]] = []
+                if (index.hasOwnProperty(this.config.listItemName)) {
+                    for (let item of index[this.config.listItemName]) {
+                        filterObj[item[this.config.routerName]] = []
+                    }
+                }
+            }
+            let filter = Object.assign(filterObj, this.filterRouteName)
+            return filter
         }
     },
     methods: {

@@ -22,6 +22,9 @@
         <zs-button @click='zeff' text='反反复复' icon='icon-export'></zs-button>
         <zs-cascader :data="data1" v-model="testVal"></zs-cascader>
         <zs-checkbox :check='check' @click='check=!check'></zs-checkbox>
+        <div>
+            <zs-paging :current='1' :all='16'></zs-paging>
+        </div>
     </div>
 </template>
 <script>

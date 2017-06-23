@@ -1,17 +1,14 @@
 <template>
-    <div class='mask' v-if='show'>
+    <div class='mask' v-if='visible'>
         <div class='zs-dialog' ref='dialog'>
             <div class='title'>
-                <i class='line'></i>
-                {{title}}
+                <i class='line'></i> {{title}}
                 <i class='iconfont icon-close' @click='close'></i>
             </div>
             <div class='mainContent'>
                 <slot name='main'></slot>
             </div>
-            <div class='btns' :style='{textAlign:enterAlign}'>
-                <zs-button :text='enterText' @click='enter'></zs-button>
-            </div>
+            <slot name='btn'></slot>
         </div>
     </div>
 </template>

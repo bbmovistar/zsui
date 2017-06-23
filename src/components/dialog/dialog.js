@@ -15,15 +15,17 @@ export default {
         enterText: {
             type: String,
             default: '确定'
-        },
-        enterAlign: {
-            type: String,
-            default: 'right'
+        }
+    },
+    data() {
+        return {
+            visible: this.show
         }
     },
     watch: {
         show(newval) {
             if (newval) {
+                this.visible = true
                 this.$nextTick(() => {
                     Velocity(this.$el,
                         {
@@ -41,18 +43,17 @@ export default {
                             duration: 300
                         })
                 })
+            } else {
+                this.destroy()
+                    .then((res) => {
+                        if (res) {
+                            this.visible = false
+                        }
+                    })
             }
         }
     },
     methods: {
-        enter() {
-            this.destroy()
-                .then(res => {
-                    if (res) {
-                        this.$emit('enter')
-                    }
-                })
-        },
         close() {
             this.destroy()
                 .then(res => {

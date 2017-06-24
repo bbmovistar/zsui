@@ -78,7 +78,7 @@
             watchOptionList() {
                 this.selectItem = '';
                 this.list = this.optionList;
-                if(this.readyonly){
+                if(this.readonly){
                     if (this.value !== null) {
                         for (let index of this.list) {
                             if (this.value === index.value) {

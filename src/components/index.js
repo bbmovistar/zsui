@@ -11,11 +11,12 @@ import main from '@/components/main/main.vue'
 import cascader from '@/components/cascader/cascader.vue'
 import breadcrumb from '@/components/breadcrumb/breadcrumb.vue'
 import breadcrumbItem from '@/components/breadcrumb/breadcrumb-item.vue'
+import checkbox from '@/components/checkbox/checkbox.vue'
 
 if (document.head) {
     let link = document.createElement('link')
     link.setAttribute('rel', 'stylesheet')
-    link.setAttribute('href', '//at.alicdn.com/t/font_bsmkicwek16skyb9.css')
+    link.setAttribute('href', '//at.alicdn.com/t/font_b510o43vfr0pmn29.css')
     document.head.appendChild(link)
 }
 
@@ -29,7 +30,8 @@ const componentList = [
     main,
     cascader,
     breadcrumb,
-    breadcrumbItem
+    breadcrumbItem,
+    checkbox
 ]
 
 const install = (Vue, options) => {

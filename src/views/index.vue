@@ -15,31 +15,22 @@
         <zs-button type='white' @click='confirm' text='success'></zs-button>
         <zs-dialog :show='aaa' @enter='aaa=false' @close='aaa=false'>
             <div slot='main'>111</div>
+            <div slot='btn'>
+                <zs-button text='取消'></zs-button>
+                <zs-button text='确定' @click='aaa=false'></zs-button>
+            </div>
         </zs-dialog>
         <zs-button @click='$toast.error("error")' text='error' icon='icon-export'></zs-button>
         <zs-button @click='$toast.warn("warn")' text='warn'></zs-button>
+        <zs-button type='gray' text='确定'></zs-button>
         <zs-button @click='zeff' text='反反复复' icon='icon-edit'></zs-button>
         <zs-button @click='zeff' text='反反复复' icon='icon-export'></zs-button>
         <zs-cascader :data="data1" v-model="testVal"></zs-cascader>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
-        <div>1111</div>
+        <zs-checkbox :check='check' @click='check=!check'></zs-checkbox>
+        <zs-button widthType='mini' text='fasdf'></zs-button>
+        <div>
+            <zs-paging :current='1' :all='16'></zs-paging>
+        </div>
     </div>
 </template>
 <script>
@@ -47,6 +38,7 @@
         data() {
             return {
                 aaa: false,
+                check: false,
                 current: 1,
                 data1: [{
                     value: 'beijing',

@@ -4,7 +4,7 @@
     </span>
 </template>
 <script>
-    export default{
+    export default {
         name: 'zsBreadcrumbItem',
         props: {
             to: {},
@@ -16,16 +16,21 @@
             }
         },
         mounted() {
-            var self = this;
-            if(this.to){
+            var self = this
+            if (this.to) {
                 let link = this.$refs.link
-                link.addEventListener('click', ()=> {
-                    let to = this.to;
-                    self.replace? self.$router.replace(to): self.$router.push(to)
+                link.addEventListener('click', () => {
+                    let to = this.to
+                    if (to.go) {
+                        self.$router.go(to.go)
+                        return false
+                    }
+                    self.replace ? self.$router.replace(to) : self.$router.push(to)
                 })
             }
         }
     }
+
 </script>
 <style lang="less" scoped>
     @import 'breadcrumb';

@@ -100,6 +100,8 @@
                     .then(res => {
                         if (res) {
                             this.$toast.success('点击了确定')
+                        } else {
+                            this.$toast.error('点击了取消')
                         }
                     })
             },

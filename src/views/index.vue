@@ -113,6 +113,9 @@
                 })
             }
 
+        },
+        created() {
+            console.log(window.atob ? window.atob(this.$route.query.key) : this.$route.query.key)
         }
     }
 

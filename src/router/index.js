@@ -11,17 +11,17 @@ Vue.use(VueRouter)
 export default new VueRouter({
     routes: [
         {
-            name: 'schoolManage',
+            name: 'departmentsMassage',
             path: '/schoolManage',
             component: index
         },
         {
-            name: 'classInfo',
+            name: 'gradeMassage',
             path: '/classInfo',
             component: main
         },
         {
-            name: 'teacherInfo',
+            name: 'classMassage',
             path: '/teacherInfo',
             component: index
         },

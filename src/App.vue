@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <zs-main :leftMenuList='leftMenuData' :systemList='systemList' currentSystem='学籍管理系统' currentRole='老师' :roleList='roleList'
-      :roleConfig='roleConfig' @roleClick='roleClick' exitUrl='http://www.baidu.com' homeUrl='http://www.baidu.com' username='哲学'></zs-main>
+      :filterRouteName='filterRouteName' :roleConfig='roleConfig' @roleClick='roleClick' exitUrl='http://www.baidu.com' homeUrl='http://www.baidu.com'
+      username='哲学'></zs-main>
   </div>
 </template>
 <script>
@@ -47,7 +48,7 @@
           name: 'appkey'
         },
         filterRouteName: {
-          classInfo: ['detail', 'detail2']
+          gradeMassage: ['detail']
         }
       }
     },

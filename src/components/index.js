@@ -13,6 +13,8 @@ import breadcrumb from '@/components/breadcrumb/breadcrumb.vue'
 import breadcrumbItem from '@/components/breadcrumb/breadcrumb-item.vue'
 import checkbox from '@/components/checkbox/checkbox.vue'
 
+import '@/assets/less/transition.less'
+
 if (document.head) {
     let link = document.createElement('link')
     link.setAttribute('rel', 'stylesheet')

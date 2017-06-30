@@ -40,54 +40,8 @@
                 aaa: false,
                 check: false,
                 current: 1,
-                data1: [{
-                    value: 'beijing',
-                    label: '人文系',
-                    children: [
-                        {
-                            value: 'gugong',
-                            label: '故宫'
-                        },
-                        {
-                            value: 'tiantan',
-                            label: '天坛'
-                        },
-                        {
-                            value: 'wangfujing',
-                            label: '王府井'
-                        }
-                    ]
-                }, {
-                    value: 'jiangsu',
-                    label: '信息系',
-                    children: [
-                        {
-                            value: 'nanjing',
-                            label: '电子技术',
-                            children: [
-                                {
-                                    value: 'fuzimiao',
-                                    label: '电气自动化',
-                                }
-                            ]
-                        },
-                        {
-                            value: 'suzhou',
-                            label: '苏州',
-                            children: [
-                                {
-                                    value: 'zhuozhengyuan',
-                                    label: '拙政园',
-                                },
-                                {
-                                    value: 'shizilin',
-                                    label: '狮子林狮子',
-                                }
-                            ]
-                        }
-                    ],
-                }],
-                testVal: ['jiangsu', 'nanjing', 'fuzimiao']
+                data1: [],
+                testVal: []
 
             }
         },
@@ -111,8 +65,68 @@
                     msgTitle: '删除',
                     msg: '法大师傅大师傅的撒大网大王德瓦达'
                 })
-            }
-
+            },
+            mockAjax() {
+                var a = new Promise((resolve) => {
+                    setTimeout(() => {
+                        let data = [{
+                            value: 'beijing',
+                            label: '人文系',
+                            children: [
+                                {
+                                    value: 'gugong',
+                                    label: '故宫'
+                                },
+                                {
+                                    value: 'tiantan',
+                                    label: '天坛'
+                                },
+                                {
+                                    value: 'wangfujing',
+                                    label: '王府井'
+                                }
+                            ]
+                        }, {
+                            value: 'jiangsu',
+                            label: '信息系',
+                            children: [
+                                {
+                                    value: 'nanjing',
+                                    label: '电子技术',
+                                    children: [
+                                        {
+                                            value: 'fuzimiao',
+                                            label: '电气自动化',
+                                        }
+                                    ]
+                                },
+                                {
+                                    value: 'suzhou',
+                                    label: '苏州',
+                                    children: [
+                                        {
+                                            value: 'zhuozhengyuan',
+                                            label: '拙政园',
+                                        },
+                                        {
+                                            value: 'shizilin',
+                                            label: '狮子林狮子',
+                                        }
+                                    ]
+                                }
+                            ],
+                        }]
+                        resolve(data)
+                    }, 1000)
+                })
+                return a
+            },
+        },
+        mounted() {
+            this.mockAjax().then((data) => {
+                this.testVal = ['jiangsu', 'nanjing', 'fuzimiao']
+                this.data1 = data
+            })
         }
     }
 

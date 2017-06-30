@@ -80,6 +80,11 @@
                 this.$emit('input', value);
                 this.$emit('change', value);
                 this.label = label.join('/');
+            },
+            data(newVal) {
+                if(newVal.length){
+                    this.init()
+                }
             }
         },
         methods: {
@@ -181,7 +186,7 @@
                 }
             },
             clickFunc(e) {
-                if(this.$refs.menu){
+                if (this.$refs.menu) {
                     let clickOnMenu = this.$refs.menu.contains(e.target)
                     if ((!this.$el.contains(e.target)) && !clickOnMenu) this.open = false
                 }

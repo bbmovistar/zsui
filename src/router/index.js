@@ -13,7 +13,8 @@ export default new VueRouter({
         {
             name: 'departmentsMassage',
             path: '/schoolManage',
-            component: index
+            component: index,
+            meta: { keepAlive: true }
         },
         {
             name: 'gradeMassage',

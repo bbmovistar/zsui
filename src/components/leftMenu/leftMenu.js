@@ -41,7 +41,7 @@ export default {
                     this.$router.push({
                         name: this.list[0][this.config.listItemName][0][this.config.routerName],
                         query: {
-                            key: this.list[0][this.config.listItemName][0][this.config.key]
+                            key: window.btoa ? window.btoa(this.list[0][this.config.listItemName][0][this.config.key]) : this.list[0][this.config.listItemName][0][this.config.key]
                         }
                     })
                     this.routerCheck(this.$route.name)
@@ -95,7 +95,7 @@ export default {
                 this.$router.push({
                     name: childItem[this.config.routerName],
                     query: {
-                        key: childItem[this.config.key]
+                        key: window.btoa ? window.btoa(childItem[this.config.key]) : childItem[this.config.key]
                     }
                 })
             }

@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import confirm from './confirm.vue'
-import Velocity from 'velocity-animate'
 
 let confirmConstructor = Vue.extend(confirm)
 
@@ -22,22 +21,7 @@ let conf = options => {
         data: options
     }).$mount()
     document.body.appendChild(confirmInstance.$el)
-    Velocity(confirmInstance.$el,
-        {
-            opacity: 1
-        },
-        {
-            duration: 300
-        })
-
-    Velocity(confirmInstance.$refs.confirm,
-        {
-            top: '50%',
-            opacity: 1
-        }, {
-            duration: 300
-        })
-
+    confirmInstance.$data.show = true
     return confirmPromise
 }
 

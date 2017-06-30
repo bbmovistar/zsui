@@ -1,0 +1,17 @@
+//弹窗类 fade
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .3s ease;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+.fade-enter-active .zs-fade, .fade-leave-active .zs-fade {
+    transition: all .3s ease;
+}
+
+.fade-enter .zs-fade, .fade-leave-to .zs-fade {
+    opacity: 0;
+    top: 49% !important;
+}

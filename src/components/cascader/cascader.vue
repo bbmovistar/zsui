@@ -80,6 +80,11 @@
                 this.$emit('input', value);
                 this.$emit('change', value);
                 this.label = label.join('/');
+            },
+            data(newVal) {
+                if(newVal.length){
+                    this.init()
+                }
             }
         },
         methods: {
@@ -131,6 +136,7 @@
                         }
                     }
                 }
+                //如果默认值未匹配到任何选项，或未设置默认值，则将path设为[-1]
                 if (opt) res.push(-1)
                 this.path = res;
             },
@@ -180,7 +186,7 @@
                 }
             },
             clickFunc(e) {
-                if(this.$refs.menu){
+                if (this.$refs.menu) {
                     let clickOnMenu = this.$refs.menu.contains(e.target)
                     if ((!this.$el.contains(e.target)) && !clickOnMenu) this.open = false
                 }

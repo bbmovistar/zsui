@@ -14,7 +14,9 @@
         <zs-button @click='testAdd'>111</zs-button>
         <zs-button type='white' @click='confirm' text='success'></zs-button>
         <zs-dialog :show='aaa' @enter='aaa=false' @close='aaa=false'>
-            <div slot='main'>111</div>
+            <div slot='main'>111
+                <zs-select></zs-select>
+            </div>
             <div slot='btn'>
                 <zs-button text='取消'></zs-button>
                 <zs-button text='确定' @click='aaa=false'></zs-button>
@@ -25,11 +27,11 @@
         <zs-button type='gray' text='确定'></zs-button>
         <zs-button text='反反' icon='icon-edit'></zs-button>
         <zs-button @click='zeff' text='反反复复' icon='icon-export'></zs-button>
-        <zs-cascader :data="data1" v-model="testVal" ></zs-cascader>
+        <zs-cascader :data="data1" v-model="testVal"></zs-cascader>
         <zs-checkbox :check='check' @click='check=!check'></zs-checkbox>
         <zs-button widthType='mini' text='fasdf'></zs-button>
         <div>
-            <zs-paging :current='1' :all='16'></zs-paging>
+            <zs-paging :current='current' :all='16'></zs-paging>
         </div>
     </div>
 </template>
@@ -128,11 +130,18 @@
                 this.testVal = ['beijing', 'gugong']
             }
         },
+        created() {
+            console.log(window.atob ? window.atob(this.$route.query.key) : this.$route.query.key)
+        },
+        activated() {
+            this.current++
+        },
         mounted() {
             this.mockAjax().then((data) => {
                 this.testVal = ['jiangsu', 'nanjing', 'fuzimiao']
                 this.data1 = data
             })
+
         }
     }
 

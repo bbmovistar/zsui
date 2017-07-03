@@ -1,146 +1,181 @@
 const menuList = [
     {
-        "isOpen": true,
+        "isPermissions": true,
+        "privilegeKey": "schoolManage",
+        "privilegeName": "学校管理",
         "routerName": "schoolManage",
-        "title": "学校管理",
-        "isPermissions": true,
-        "icon": 'icon-success'
+        "icon": 'icon-success',
+        "items": [
+            {
+                "isPermissions": true,
+                "privilegeKey": "schoolManage-departmentsMassage",
+                "privilegeName": "院系管理",
+                "routerName": "departmentsMassage",
+                "items": []
+            },
+            {
+                "isPermissions": true,
+                "privilegeKey": "schoolManage-gradeMassage",
+                "privilegeName": "年级管理",
+                "routerName": "gradeMassage",
+                "items": []
+            }
+        ]
     },
     {
-        "isOpen": false,
+        "isPermissions": true,
+        "privilegeKey": "classManage",
+        "privilegeName": "班级管理",
         "routerName": "classManage",
-        "title": "班级管理",
-        "isPermissions": true,
-        "icon": 'icon-success',
         "items": [
             {
-                "itemName": "班级信息",
-                "isOpen": true,
-                "routerName": "classInfo",
-                "addHighlight": false
+                "isPermissions": true,
+                "privilegeKey": "classManage-classMassage",
+                "privilegeName": "班级信息",
+                "routerName": "classMassage",
+                "items": []
             }
         ]
     },
     {
-        "isOpen": false,
-        "routerName": "teacherManage",
-        "title": "教师管理",
         "isPermissions": true,
-        "icon": 'icon-success',
         "items": [
             {
-                "itemName": "教师信息",
-                "isOpen": true,
-                "routerName": "teacherInfo",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "teacherManage-teachersInformation",
+                "privilegeName": "教师信息",
+                "routerName": "teachersInformation"
             }
-        ]
+        ],
+        "privilegeKey": "teacherManage",
+        "privilegeName": "教师管理",
+        "routerName": "teacherManage"
     },
     {
-        "isOpen": false,
-        "routerName": "studentManage",
-        "title": "学生管理",
         "isPermissions": true,
         "items": [
             {
-                "itemName": "学生信息",
-                "isOpen": true,
-                "routerName": "studentInformation",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "studentManage-studentInformation",
+                "privilegeName": "学生信息",
+                "routerName": "studentInformation"
             }
-        ]
+        ],
+        "privilegeKey": "studentManage",
+        "privilegeName": "学生管理",
+        "routerName": "studentManage"
     },
     {
-        "isOpen": false,
-        "routerName": "attendManage",
-        "title": "考勤管理",
         "isPermissions": true,
         "items": [
             {
-                "itemName": "年级考勤",
-                "isOpen": true,
-                "routerName": "gradeAttendance",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "attendManage-departmentsAttendance",
+                "privilegeName": "院系考勤",
+                "routerName": "departmentsAttendance"
             },
             {
-                "itemName": "班级考勤",
-                "isOpen": true,
-                "routerName": "classAttendanceStatistical",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "attendManage-gradeAttendance",
+                "privilegeName": "年级考勤",
+                "routerName": "gradeAttendance"
+            },
+            {
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "attendManage-classAttendanceStatistical",
+                "privilegeName": "班级考勤",
+                "routerName": "classAttendanceStatistical"
             }
-        ]
+        ],
+        "privilegeKey": "attendManage",
+        "privilegeName": "考勤管理",
+        "routerName": "attendManage"
     },
     {
-        "isOpen": false,
-        "routerName": "signManage",
-        "title": "签到情况",
         "isPermissions": true,
         "items": [
             {
-                "itemName": "我的签到",
-                "isOpen": true,
-                "routerName": "mySignIn",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "signManage-mySignIn",
+                "privilegeName": "我的签到",
+                "routerName": "mySignIn"
             },
             {
-                "itemName": "我发起的签到",
-                "isOpen": true,
-                "routerName": "mySponsor",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "signManage-mySponsor",
+                "privilegeName": "我发起的签到",
+                "routerName": "mySponsor"
             },
             {
-                "itemName": "班级点名",
-                "isOpen": true,
-                "routerName": "rollCallClass",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "signManage-rollCallClass",
+                "privilegeName": "班级点名",
+                "routerName": "rollCallClass"
             }
-        ]
+        ],
+        "privilegeKey": "signManage",
+        "privilegeName": "签到情况",
+        "routerName": "signManage"
     },
     {
-        "isOpen": false,
-        "routerName": "setting",
-        "title": "设置管理",
         "isPermissions": true,
         "items": [
             {
-                "itemName": "登录权限",
-                "isOpen": true,
-                "routerName": "loginPermissions",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "setting-loginPermissions",
+                "privilegeName": "登录权限",
+                "routerName": "loginPermissions"
             },
             {
-                "itemName": "权限设置",
-                "isOpen": true,
-                "routerName": "permissionsTransfer",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "setting-permissionsTransfer",
+                "privilegeName": "权限设置",
+                "routerName": "permissionsTransfer"
             },
             {
-                "itemName": "我的权限",
-                "isOpen": true,
-                "routerName": "systemPermissions",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "setting-systemPermissions",
+                "privilegeName": "我的权限",
+                "routerName": "systemPermissions"
             },
             {
-                "itemName": "修改密码",
-                "isOpen": true,
-                "routerName": "changePassword",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "setting-changePassword",
+                "privilegeName": "修改密码",
+                "routerName": "changePassword"
             }
-        ]
+        ],
+        "privilegeKey": "setting",
+        "privilegeName": "设置管理",
+        "routerName": "setting"
     },
     {
-        "isOpen": false,
-        "routerName": "wristbandSetting",
-        "title": "手环设置",
         "isPermissions": true,
         "items": [
             {
-                "itemName": "手环绑定",
-                "isOpen": true,
-                "routerName": "handRingBinding",
-                "addHighlight": false
+                "isPermissions": true,
+                "items": [],
+                "privilegeKey": "wristbandSetting-handRingBinding",
+                "privilegeName": "手环绑定",
+                "routerName": "handRingBinding"
             }
-        ]
+        ],
+        "privilegeKey": "wristbandSetting",
+        "privilegeName": "手环设置",
+        "routerName": "wristbandSetting"
     }
 ]
+
 export default menuList

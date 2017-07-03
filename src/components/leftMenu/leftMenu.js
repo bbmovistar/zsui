@@ -17,21 +17,16 @@ export default {
     },
     data() {
         let config = Object.assign({
-            titleName: 'title',
+            titleName: 'privilegeName',
             iconName: 'icon',
             permissionName: 'isPermissions',
             listItemName: 'items',
-            itemName: 'itemName',
-            routerName: 'routerName'
+            itemName: 'privilegeName',
+            routerName: 'routerName',
+            key: 'privilegeKey'
         }, this.leftMenuConfig)
         return {
             config: config
-        }
-    },
-    watch: {
-        '$route': function (newval) {
-            this.addClickAndLight()
-            this.routerCheck(newval.name)
         }
     },
     computed: {
@@ -41,13 +36,15 @@ export default {
                 this.routerCheck(this.$route.name)
                 return this.list
             }
-            if (this.list.length > 0) {
+            if (this.list.length > 0 && this.list[0].hasOwnProperty(this.config.listItemName) && this.list[0][this.config.listItemName].length > 0) {
                 try {
-                    if (this.list[0].hasOwnProperty(this.config.listItemName)) {
-                        this.$router.push({ name: this.list[0][this.config.listItemName][0][this.config.routerName] })
-                    } else {
-                        this.$router.push({ name: this.list[0][this.config.routerName] })
-                    }
+                    this.$router.push({
+                        name: this.list[0][this.config.listItemName][0][this.config.routerName],
+                        query: {
+                            key: window.btoa ? window.btoa(this.list[0][this.config.listItemName][0][this.config.key]) : this.list[0][this.config.listItemName][0][this.config.key]
+                        }
+                    })
+                    this.routerCheck(this.$route.name)
                 } catch (error) {
                     console.warn('默认使用第一个子菜单路由失败，此路由还没有name属性')
                 }
@@ -72,21 +69,38 @@ export default {
         //点击第一级菜单
         openMenu(item) {
             let itemClickFlag = item.click
+            let isOnlyOne = item.hasOwnProperty(this.config.listItemName) && item[this.config.listItemName].length === 1
             for (let index of this.list) {
                 index.click = false
             }
-            item.click = !itemClickFlag
-            if (!item.hasOwnProperty(this.config.listItemName)) {
-                this.$router.push({ name: item[this.config.routerName] })
+            item.click = isOnlyOne ? false : !itemClickFlag
+            if (isOnlyOne) {
+                try {
+                    this.$router.push({
+                        name: item[this.config.listItemName][0][this.config.routerName],
+                        query: {
+                            key: window.btoa ? window.btoa(item[this.config.listItemName][0][this.config.key]) : item[this.config.listItemName][0][this.config.key]
+                        }
+                    })
+                }
+                catch (error) {
+                    console.warn('唯一的子路由还没有name属性')
+                }
+
             }
         },
         //点击第二级菜单
         clickItem(childItem) {
             try {
-                this.$router.push({ name: childItem[this.config.routerName] })
+                this.$router.push({
+                    name: childItem[this.config.routerName],
+                    query: {
+                        key: window.btoa ? window.btoa(childItem[this.config.key]) : childItem[this.config.key]
+                    }
+                })
             }
             catch (error) {
-                console.warn('此路由还没有name属性')
+                console.warn('此子路由还没有name属性')
             }
         },
         addClickAndLight() {
@@ -94,7 +108,7 @@ export default {
                 for (let value of this.list) {
                     this.$set(value, 'click', false)
                     this.$set(value, 'light', false)
-                    if (value.hasOwnProperty(this.config.listItemName)) {
+                    if (value.hasOwnProperty(this.config.listItemName) && value[this.config.listItemName].length > 0) {
                         for (let itemValue of value[this.config.listItemName]) {
                             this.$set(itemValue, 'light', false)
                         }
@@ -104,15 +118,10 @@ export default {
         },
         routerCheck(name) {
             for (let value of this.list) {
-                if (name === value[this.config.routerName] || this.filter[value[this.config.routerName]].includes(name)) {
-                    value.click = true
-                    value.light = true
-                    return false
-                }
-                if (value.hasOwnProperty(this.config.listItemName)) {
+                if (value.hasOwnProperty(this.config.listItemName) && value[this.config.listItemName].length > 0) {
                     for (let itemValue of value[this.config.listItemName]) {
                         if (name === itemValue[this.config.routerName] || this.filter[itemValue[this.config.routerName]].includes(name)) {
-                            value.click = true
+                            value.click = value[this.config.listItemName].length === 1 ? false : true
                             value.light = true
                             itemValue.light = true
                         }

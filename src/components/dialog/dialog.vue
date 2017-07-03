@@ -1,7 +1,7 @@
 <template>
     <transition name='fade'>
-        <div class='mask' v-if='visible' @click='close'>
-            <div class='zs-dialog zs-fade' @click.stop>
+        <div class='mask' v-if='visible' @click.self='close'>
+            <div class='zs-dialog zs-fade'>
                 <div class='title'>
                     <i class='line'></i> {{title}}
                     <i class='iconfont icon-close' @click='close'></i>

@@ -6,12 +6,12 @@
             <span slot='right-option'>
                 <zs-button @click='$toast.error("error")' text='error' icon='icon-export'></zs-button>
                 <zs-button @click='$toast.warn("warn")' text='warn'></zs-button>
-                <zs-button @click='zeff' text='反反复复' icon='icon-edit'></zs-button>
+                <zs-button @click='getNext' text='反复' icon='icon-edit'></zs-button>
                 <zs-button @click='zeff' text='反反复复' icon='icon-export'></zs-button>
             </span>
         </zs-breadcrumb>
         <zs-paging :current='current' :all='15' @paging='paging'></zs-paging>
-        <zs-button @click='aaa=true'>111</zs-button>
+        <zs-button @click='testAdd'>111</zs-button>
         <zs-button type='white' @click='confirm' text='success'></zs-button>
         <zs-dialog :show='aaa' @enter='aaa=false' @close='aaa=false'>
             <div slot='main'>111</div>
@@ -23,9 +23,9 @@
         <zs-button @click='$toast.error("error")' text='error' icon='icon-export'></zs-button>
         <zs-button @click='$toast.warn("warn")' text='warn'></zs-button>
         <zs-button type='gray' text='确定'></zs-button>
-        <zs-button @click='zeff' text='反反复复' icon='icon-edit'></zs-button>
+        <zs-button text='反反' icon='icon-edit'></zs-button>
         <zs-button @click='zeff' text='反反复复' icon='icon-export'></zs-button>
-        <zs-cascader :data="data1" v-model="testVal"></zs-cascader>
+        <zs-cascader :data="data1" v-model="testVal" ></zs-cascader>
         <zs-checkbox :check='check' @click='check=!check'></zs-checkbox>
         <zs-button widthType='mini' text='fasdf'></zs-button>
         <div>
@@ -41,8 +41,8 @@
                 check: false,
                 current: 1,
                 data1: [],
-                testVal: []
-
+                testVal: [],
+                newVal: []
             }
         },
         methods: {
@@ -121,6 +121,12 @@
                 })
                 return a
             },
+            testAdd() {
+                this.testVal = ['jiangsu', 'nanjing', 'fuzimiao']
+            },
+            getNext() {
+                this.testVal = ['beijing', 'gugong']
+            }
         },
         mounted() {
             this.mockAjax().then((data) => {

@@ -1,12 +1,12 @@
 <template>
     <div class="zs-cascader">
-        <input type="text" :placeholder="label? '' : placeholder" class="zs-cascader-input" value=""
+        <input type="text" :placeholder="label? '' : placeholder" class="zs-cascader-input"  :class="disabled?'disabled' : ''" value=""
                readonly="!filterable" autocomplete="off"
                @click.stop="toggleMenu">
         <span class="zs-cascader-label">{{label}}</span>
-        <i v-if="allowClear && defaultValue.length" class="iconfont icon-clean" @click.stop="clear">
+        <i v-if="allowClear && defaultValue.length && !disabled" class="iconfont icon-clean" @click.stop="clear">
         </i>
-        <i class="zs-cascader-select-icon iconfont icon-select-arrow-down"
+        <i v-if="!disabled" class="zs-cascader-select-icon iconfont icon-select-arrow-down"
            :class="open?'zs-cascader-select-icon-opened' : '' ">
         </i>
         <div ref="menu" v-show="open" :style="style" class="zs-cascader-dropDown">
@@ -82,7 +82,12 @@
                 this.label = label.join('/');
             },
             data(newVal) {
-                if(newVal.length){
+                if (newVal.length) {
+                    this.init()
+                }
+            },
+            value(newVal, oldVal) {
+                if(JSON.stringify(newVal) !== JSON.stringify(oldVal)){
                     this.init()
                 }
             }
@@ -125,7 +130,7 @@
                 }
             },
             init() {
-                this.defaultValue = JSON.parse(JSON.stringify(this.value))
+//                this.defaultValue = JSON.parse(JSON.stringify(this.value))
                 let res = [], opt = this.data;
                 for (let val of this.value) {
                     for (let [i, item] of opt.entries()) {

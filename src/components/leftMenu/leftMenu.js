@@ -36,20 +36,21 @@ export default {
                 this.routerCheck(this.$route.name)
                 return this.list
             }
-            if (this.list.length > 0 && this.list[0].hasOwnProperty(this.config.listItemName) && this.list[0][this.config.listItemName].length > 0) {
-                try {
-                    this.$router.push({
-                        name: this.list[0][this.config.listItemName][0][this.config.routerName],
-                        query: {
-                            key: window.btoa ? window.btoa(this.list[0][this.config.listItemName][0][this.config.key]) : this.list[0][this.config.listItemName][0][this.config.key]
-                        }
-                    })
-                    this.routerCheck(this.$route.name)
-                } catch (error) {
-                    console.warn('默认使用第一个子菜单路由失败，此路由还没有name属性')
+            if (this.list.length > 0) {
+                for (let index of this.list) {
+                    if (index.hasOwnProperty(this.config.listItemName) && index[this.config.listItemName].length > 0) {
+                        this.$router.push({
+                            name: index[this.config.listItemName][0][this.config.routerName],
+                            query: {
+                                key: window.btoa ? window.btoa(index[this.config.listItemName][0][this.config.key]) : index[this.config.listItemName][0][this.config.key]
+                            }
+                        })
+                        this.routerCheck(this.$route.name)
+                        break
+                    }
                 }
-                return this.list
             }
+            return this.list
         },
         'filter': function () {
             let filterObj = {}

@@ -5,7 +5,7 @@
                 <div class='first-menu' :class='{"active":item.light}'>
                     <span class='iconfont item-icon' :class='item[config.iconName]'></span>
                     <span :class='{"blodFont":item.light}'>{{item[config.titleName]}}</span>
-                    <span class='iconfont' v-if='item[config.listItemName]&&item[config.listItemName].length>1' :class='[item.click?"icon-menu-arrow-down":"icon-menu-arrow-up"]'></span>
+                    <span class='iconfont' v-if='item[config.listItemName]&&item[config.listItemName].length>1' :class='[item.click?"icon-menu-arrow-up":"icon-menu-arrow-down"]'></span>
                 </div>
                 <transition @before-enter='itemBeforeEnter' @enter='itemEnter' @leave='itemLeave'>
                     <ul v-show='item.click' class='second-item-list'>

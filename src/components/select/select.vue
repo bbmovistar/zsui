@@ -48,13 +48,6 @@
                 default: false
             }
         },
-        computed: {
-            //            selectItem(){
-            //                if(value){
-            //                    return value
-            //                }
-            //            }
-        },
         watch: {
             optionList: 'watchOptionList',
             value: 'watchValue',
@@ -81,8 +74,10 @@
                 if(this.readonly){
                     if (this.value !== null) {
                         for (let index of this.list) {
+                            index.isSelected = false
                             if (this.value === index.value) {
                                 this.selectItem = index.label
+                                index.isSelected = true
                                 return
                             } else {
                                 this.selectItem = ''
@@ -100,8 +95,10 @@
                         this.selectItem = ''
                     } else {
                         for (let index of this.list) {
+                            index.isSelected = false
                             if (this.value === index.value) {
                                 this.selectItem = index.label
+                                index.isSelected = true
                                 return
                             } else {
                                 this.selectItem = ''
@@ -116,7 +113,6 @@
                     }
 
                 }
-
             },
             watchSelectItem(newVal) {
                 if (this.readonly === false) {
@@ -152,6 +148,7 @@
                     if (this.readonly) {
                         this.optionList.forEach((item) => {
                             if (item.value === this.value) {
+                                item.isSelected = true
                                 this.selectItem = item.label;
                             }
                         })

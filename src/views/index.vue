@@ -27,12 +27,13 @@
         <zs-button type='gray' text='确定'></zs-button>
         <zs-button text='反反' icon='icon-edit'></zs-button>
         <zs-button @click='zeff' text='反反复复' icon='icon-export'></zs-button>
-        <zs-cascader :data="data1" v-model="testVal"></zs-cascader>
+        <!--<zs-cascader :data="data1" v-model="testVal"></zs-cascader>-->
         <zs-checkbox :check='check' @click='check=!check'></zs-checkbox>
         <zs-button widthType='mini' text='fasdf'></zs-button>
         <div>
             <zs-paging :current='current' :all='16'></zs-paging>
         </div>
+        <zs-select :optionList="list" v-model="haha"></zs-select>
     </div>
 </template>
 <script>
@@ -44,7 +45,12 @@
                 current: 1,
                 data1: [],
                 testVal: [],
-                newVal: []
+                newVal: [],
+                list: [
+                    {label: 'aaa', value: 1},
+                    {label: 'bbb', value: 2}
+                ],
+                haha: 1
             }
         },
         methods: {
@@ -140,6 +146,7 @@
             this.mockAjax().then((data) => {
                 this.testVal = ['jiangsu', 'nanjing', 'fuzimiao']
                 this.data1 = data
+                this.haha = 2
             })
 
         }

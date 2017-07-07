@@ -10,7 +10,6 @@ let tips = options => {
     if (!instaceController) {
         let createDIV = document.createElement('div')
         createDIV.id = 'instaceController'
-        createDIV.style = 'position:absolute;width:0;height:0;top:0;left:0;'
         instaceController = document.body.appendChild(createDIV)
     }
     if (typeof options === 'string') {

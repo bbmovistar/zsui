@@ -14,7 +14,7 @@
                 <li v-for='item in systemList' @click='link(item)'>{{item[config.systemConfig.name]}}</li>
             </ul>
         </div>
-        <a :href='exitUrl' class='exit'>
+        <a href='javascript:;' class='exit' @click='exit'>
             退出系统
             <span class='line left-line'></span>
         </a>

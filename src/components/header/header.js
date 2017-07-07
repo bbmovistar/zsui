@@ -28,7 +28,10 @@ export default {
     ],
     methods: {
         link(item) {
-            window.location.assign(item[this.config.url])
+            window.location.assign(item[this.config.systemConfig.url])
+        },
+        exit() {
+            this.$emit('exit')
         },
         home() {
             window.location.assign(this.homeUrl)

@@ -2,7 +2,7 @@
   <div id="app">
     <zs-main :leftMenuList='leftMenuData' :systemList='systemList' currentSystem='学籍管理系统' currentRole='老师' :roleList='roleList'
       :filterRouteName='filterRouteName' :roleConfig='roleConfig' @roleClick='roleClick' exitUrl='http://www.baidu.com' homeUrl='http://www.baidu.com'
-      username='哲学'></zs-main>
+      username='哲学' @exit='exit'></zs-main>
   </div>
 </template>
 <script>
@@ -55,6 +55,9 @@
     methods: {
       roleClick($event) {
         console.log($event)
+      },
+      exit() {
+        console.log(1)
       }
     },
     created() {

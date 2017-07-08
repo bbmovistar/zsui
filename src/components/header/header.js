@@ -12,7 +12,6 @@ export default {
         'roleList',
         'roleConfig',
         'currentRole',
-        'exitUrl',
         'homeUrl',
         'username'
     ],

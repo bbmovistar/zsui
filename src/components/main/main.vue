@@ -2,7 +2,7 @@
     <div id='main'>
         <!--头部-->
         <zs-header :systemList='systemList' :systemConfig='systemConfig' :currentSystem='currentSystem' :roleList='roleList' :roleConfig='roleConfig'
-            :currentRole='currentRole' @roleClick='roleClick' :homeUrl='homeUrl' :exitUrl='exitUrl' :username='username' @exit='exit'></zs-header>
+            :currentRole='currentRole' @roleClick='roleClick' :homeUrl='homeUrl' :username='username' @exit='exit'></zs-header>
         <div id='content'>
             <!--侧边栏-->
             <zs-leftMenu :list='leftMenuList' :leftMenuConfig='leftMenuConfig' :filterRouteName='filterRouteName'></zs-leftMenu>
@@ -72,10 +72,6 @@
                 }
             },
             username: {
-                type: String,
-                required: true
-            },
-            exitUrl: {
                 type: String,
                 required: true
             },

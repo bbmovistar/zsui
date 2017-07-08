@@ -2,17 +2,7 @@ export default {
     data() {
         return {
             systemListFlag: false,
-            roleListFlag: false,
-            config: {
-                systemConfig: Object.assign({
-                    name: 'name',
-                    url: 'url'
-                }, this.systemConfig),
-                roleConfig: Object.assign({
-                    name: 'name',
-                    key: 'key'
-                }, this.roleConfig)
-            }
+            roleListFlag: false
         }
     },
     props: [
@@ -26,6 +16,20 @@ export default {
         'homeUrl',
         'username'
     ],
+    computed: {
+        config() {
+            return {
+                systemConfig: Object.assign({
+                    name: 'name',
+                    url: 'url'
+                }, this.systemConfig),
+                roleConfig: Object.assign({
+                    name: 'name',
+                    key: 'key'
+                }, this.roleConfig)
+            }
+        }
+    },
     methods: {
         link(item) {
             window.location.assign(item[this.config.systemConfig.url])

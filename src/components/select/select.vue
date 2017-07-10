@@ -71,7 +71,7 @@
             watchOptionList() {
                 this.selectItem = '';
                 this.list = this.optionList;
-                if(this.readonly){
+                if (this.readonly) {
                     if (this.value !== null) {
                         for (let index of this.list) {
                             index.isSelected = false
@@ -84,7 +84,7 @@
                             }
                         }
                     }
-                }else{
+                } else {
                     this.selectItem = this.value
                 }
             },

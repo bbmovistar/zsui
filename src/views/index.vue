@@ -33,7 +33,8 @@
         <div>
             <zs-paging :current='current' :all='16'></zs-paging>
         </div>
-        <zs-select :optionList="list" v-model="haha"></zs-select>
+        <zs-select :optionList="list" v-model="haha" :disabled='d'></zs-select>
+        <zs-button @click='d=!d' text='切换'></zs-button>
     </div>
 </template>
 <script>
@@ -42,6 +43,7 @@
             return {
                 aaa: false,
                 check: false,
+                d:true,
                 current: 1,
                 data1: [],
                 testVal: [],

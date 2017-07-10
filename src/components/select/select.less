@@ -7,15 +7,15 @@
   .zs-select_box {
     .zs-select_icon {
       position: absolute;
-        width: 13px;
-        height: 13px;
-        right: 7px;
-        color: #333;
-        font-size: 12px;
-        line-height: 16px;
-        top: 8px;
-        cursor: pointer;
-        transition: all .3s;
+      width: 13px;
+      height: 13px;
+      right: 7px;
+      color: #333;
+      font-size: 12px;
+      line-height: 16px;
+      top: 8px;
+      cursor: pointer;
+      transition: all .3s;
       background-size: 80%;
     }
     .zs-select_icon.opened {
@@ -41,11 +41,16 @@
       width: 100%;
       cursor: pointer;
     }
-    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    input[disabled]{
+      border: none;
+    }
+    :-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
       color: #999;
       opacity: 1;
     }
-    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    ::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
       color: #999;
       opacity: 1;
     }

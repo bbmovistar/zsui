@@ -20,7 +20,8 @@ export default {
             return {
                 systemConfig: Object.assign({
                     name: 'name',
-                    url: 'url'
+                    url: 'url',
+                    key: 'key',
                 }, this.systemConfig),
                 roleConfig: Object.assign({
                     name: 'name',
@@ -31,7 +32,7 @@ export default {
     },
     methods: {
         link(item) {
-            window.location.assign(item[this.config.systemConfig.url])
+            window.location.assign(item[this.config.systemConfig.url] + `?appKey=${item[this.config.systemConfig.key]}`)
         },
         exit() {
             this.$emit('exit')

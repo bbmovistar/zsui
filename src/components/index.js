@@ -18,7 +18,7 @@ import '@/assets/less/transition.less'
 if (document.head) {
     let link = document.createElement('link')
     link.setAttribute('rel', 'stylesheet')
-    link.setAttribute('href', '//at.alicdn.com/t/font_b510o43vfr0pmn29.css')
+    link.setAttribute('href', '//at.alicdn.com/t/font_qvsoqsapn2whr529.css')
     document.head.appendChild(link)
 }
 

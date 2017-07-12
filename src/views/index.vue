@@ -35,6 +35,8 @@
         </div>
         <zs-select :optionList="list" v-model="haha" :disabled='d'></zs-select>
         <zs-button @click='d=!d' text='切换'></zs-button>
+        <zs-button text='31413' icon='icon-upload'></zs-button>
+        <zs-button text='31413' icon='icon-download'></zs-button>
     </div>
 </template>
 <script>

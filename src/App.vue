@@ -17,19 +17,23 @@
         systemList: [
           {
             name: '访客管理系统',
-            url: 'http://www.baidu.com'
+            url: 'http://www.baidu.com',
+            key: 'aaa'
           },
           {
             name: '招生管理系统',
-            url: 'http://www.baidu.com'
+            url: 'http://www.baidu.com',
+            key: 'aaa'
           },
           {
             name: '学籍管理系统',
-            url: 'http://www.baidu.com'
+            url: 'http://www.baidu.com',
+            key: 'aaa'
           },
           {
             name: '防御管理系统',
-            url: 'http://www.baidu.com'
+            url: 'http://www.baidu.com',
+            key: 'aaa'
           }
         ],
         roleList: [

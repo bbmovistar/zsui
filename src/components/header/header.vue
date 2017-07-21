@@ -5,7 +5,7 @@
             <span class='logo-text'>浙江正实科技</span>
             <span class='line logo-line'></span>
         </div>
-        <div class='system' @mouseenter='systemListFlag=true' @mouseleave='systemListFlag=false'>
+        <div class='system' @mouseenter='systemListFlag=true' @mouseleave='systemListFlag=false' v-if='systemListShow'>
             <div class='current'>
                 {{currentSystem}}
                 <span class='iconfont' :class='[systemListFlag?"icon-select-arrow-up":"icon-select-arrow-down"]'></span>
@@ -16,15 +16,15 @@
         </div>
         <a href='javascript:;' class='exit' @click='exit'>
             退出系统
-            <span class='line left-line'></span>
         </a>
-        <div class='role' @mouseenter='roleListFlag=true' @mouseleave='roleListFlag=false'>
+        <div class='role' @mouseenter='roleListFlag=true' @mouseleave='roleListFlag=false' v-if='roleListShow'>
             角色：{{currentRole}}
             <ul v-show='roleListFlag'>
                 <li v-for='item in roleList' @click.stop='roleListClick(item)'>
                     切换：{{item[config.roleConfig.name]}}
                 </li>
             </ul>
+            <span class='line right-line'></span>
         </div>
         <div class='name'>
             欢迎您，{{username}}

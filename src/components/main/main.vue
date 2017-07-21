@@ -1,8 +1,8 @@
 <template>
     <div id='main'>
         <!--头部-->
-        <zs-header :systemList='systemList' :systemConfig='systemConfig' :currentSystem='currentSystem' :roleList='roleList' :roleConfig='roleConfig'
-            :currentRole='currentRole' @roleClick='roleClick' :homeUrl='homeUrl' :username='username' @exit='exit'></zs-header>
+        <zs-header :systemList='systemList' :systemConfig='systemConfig' :systemListShow='systemListShow' :currentSystem='currentSystem' :roleList='roleList' :roleConfig='roleConfig'
+            :currentRole='currentRole' :roleListShow='roleListShow'  @roleClick='roleClick' :homeUrl='homeUrl' :username='username' @exit='exit'></zs-header>
         <div id='content'>
             <!--侧边栏-->
             <zs-leftMenu :list='leftMenuList' :leftMenuConfig='leftMenuConfig' :filterRouteName='filterRouteName'></zs-leftMenu>
@@ -20,13 +20,15 @@
         props: {
             //当前系统
             currentSystem: {
-                type: String,
-                required: true
+                type: String
             },
             //系统列表
             systemList: {
-                type: Array,
-                required: true
+                type: Array
+            },
+            systemListShow: {
+                type: Boolean,
+                default: true
             },
             //系统字段配置
             systemConfig: {
@@ -37,13 +39,15 @@
             },
             //当前角色
             currentRole: {
-                type: String,
-                required: true
+                type: String
             },
             //角色列表
             roleList: {
-                type: Array,
-                required: true
+                type: Array
+            },
+            roleListShow: {
+                type: Boolean,
+                default: true
             },
             /*角色字段配置*/
             roleConfig: {

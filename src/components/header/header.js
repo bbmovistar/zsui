@@ -13,7 +13,9 @@ export default {
         'roleConfig',
         'currentRole',
         'homeUrl',
-        'username'
+        'username',
+        'systemListShow',
+        'roleListShow'
     ],
     computed: {
         config() {

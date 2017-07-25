@@ -14,6 +14,7 @@
                 <li v-for='item in systemList' @click='link(item)'>{{item[config.systemConfig.name]}}</li>
             </ul>
         </div>
+        <div class='school-name' v-if='schoolNameShow'>{{schoolName}}</div>
         <a href='javascript:;' class='exit' @click='exit'>
             退出系统
         </a>

@@ -1,8 +1,9 @@
 <template>
     <div id='main'>
         <!--头部-->
-        <zs-header :systemList='systemList' :systemConfig='systemConfig' :systemListShow='systemListShow' :currentSystem='currentSystem' :roleList='roleList' :roleConfig='roleConfig'
-            :currentRole='currentRole' :roleListShow='roleListShow'  @roleClick='roleClick' :homeUrl='homeUrl' :username='username' @exit='exit'></zs-header>
+        <zs-header :systemList='systemList' :systemConfig='systemConfig' :systemListShow='systemListShow' :currentSystem='currentSystem'
+            :roleList='roleList' :roleConfig='roleConfig' :currentRole='currentRole' :schoolName='schoolName' :schoolNameShow='schoolNameShow' :roleListShow='roleListShow'
+            @roleClick='roleClick' :homeUrl='homeUrl' :username='username' @exit='exit'></zs-header>
         <div id='content'>
             <!--侧边栏-->
             <zs-leftMenu :list='leftMenuList' :leftMenuConfig='leftMenuConfig' :filterRouteName='filterRouteName'></zs-leftMenu>
@@ -18,6 +19,14 @@
     export default {
         name: 'zs-main',
         props: {
+            schoolName: {
+                type: String,
+                default: ''
+            },
+            schoolNameShow: {
+                type: Boolean,
+                default: false
+            },
             //当前系统
             currentSystem: {
                 type: String

@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <zs-main :leftMenuList='leftMenuData' :systemList='systemList' :systemListShow='false' currentSystem='学籍管理系统' currentRole='老师' :roleList='roleList'
-      :filterRouteName='filterRouteName' :roleConfig='roleConfig' :roleListShow='false' @roleClick='roleClick' exitUrl='http://www.baidu.com' homeUrl='http://www.baidu.com'
-      username='哲学' @exit='exit'></zs-main>
+    <zs-main :leftMenuList='leftMenuData' :systemList='systemList' :systemListShow='false' currentSystem='学籍管理系统' currentRole='老师'
+      :roleList='roleList' :filterRouteName='filterRouteName' schoolName='艮山中学' :schoolNameShow='true' :roleConfig='roleConfig'
+      :roleListShow='false' @roleClick='roleClick' exitUrl='http://www.baidu.com' homeUrl='http://www.baidu.com' username='哲学'
+      @exit='exit'></zs-main>
   </div>
 </template>
 <script>

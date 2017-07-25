@@ -15,7 +15,9 @@ export default {
         'homeUrl',
         'username',
         'systemListShow',
-        'roleListShow'
+        'roleListShow',
+        'schoolName',
+        'schoolNameShow'
     ],
     computed: {
         config() {

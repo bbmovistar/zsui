@@ -1,12 +1,31 @@
 <template>
     <div id='main'>
         <!--头部-->
-        <zs-header :systemList='systemList' :systemConfig='systemConfig' :systemListShow='systemListShow' :currentSystem='currentSystem'
-            :roleList='roleList' :roleConfig='roleConfig' :currentRole='currentRole' :schoolName='schoolName' :schoolNameShow='schoolNameShow' :roleListShow='roleListShow'
-            @roleClick='roleClick' :homeUrl='homeUrl' :username='username' @exit='exit'></zs-header>
+        <zs-header 
+            :systemList='systemList' 
+            :systemConfig='systemConfig' 
+            :systemListShow='systemListShow' 
+            :currentSystem='currentSystem'
+            :roleList='roleList' 
+            :roleConfig='roleConfig' 
+            :currentRole='currentRole'
+            :schoolName='schoolName' 
+            :schoolNameShow='schoolNameShow'
+            :roleListShow='roleListShow'
+            :homeUrl='homeUrl' 
+            :username='username' 
+            :logoUrl='logoUrl'
+            :logoName='logoName'
+            @roleClick='roleClick'
+            @exit='exit'>
+        </zs-header>
         <div id='content'>
             <!--侧边栏-->
-            <zs-leftMenu :list='leftMenuList' :leftMenuConfig='leftMenuConfig' :filterRouteName='filterRouteName'></zs-leftMenu>
+            <zs-leftMenu 
+                :list='leftMenuList' 
+                :leftMenuConfig='leftMenuConfig' 
+                :filterRouteName='filterRouteName'>
+            </zs-leftMenu>
             <!--主路由-->
             <zs-mainRouter></zs-mainRouter>
         </div>
@@ -19,6 +38,12 @@
     export default {
         name: 'zs-main',
         props: {
+            logoUrl: {
+                type: String
+            },
+            logoName: {
+                type: String
+            },
             schoolName: {
                 type: String,
                 default: ''

@@ -1,11 +1,15 @@
 <template>
     <div id='header'>
         <div class='logo' @click.stop='home'>
-            <span class='iconfont icon-logo'></span>
-            <span class='logo-text'>浙江正实科技</span>
+            <img :src='logoUrl'>
+            <span class='logo-text'>{{logoName.length>6?logoName.substring(0,7):logoName}}</span>
             <span class='line logo-line'></span>
         </div>
-        <div class='system' @mouseenter='systemListFlag=true' @mouseleave='systemListFlag=false' v-if='systemListShow'>
+        <div 
+            class='system' 
+            @mouseenter='systemListFlag=true' 
+            @mouseleave='systemListFlag=false' 
+            v-if='systemListShow'>
             <div class='current'>
                 {{currentSystem}}
                 <span class='iconfont' :class='[systemListFlag?"icon-select-arrow-up":"icon-select-arrow-down"]'></span>
@@ -18,7 +22,11 @@
         <a href='javascript:;' class='exit' @click='exit'>
             退出系统
         </a>
-        <div class='role' @mouseenter='roleListFlag=true' @mouseleave='roleListFlag=false' v-if='roleListShow'>
+        <div 
+            class='role' 
+            @mouseenter='roleListFlag=true' 
+            @mouseleave='roleListFlag=false' 
+            v-if='roleListShow'>
             角色：{{currentRole}}
             <ul v-show='roleListFlag'>
                 <li v-for='item in roleList' @click.stop='roleListClick(item)'>

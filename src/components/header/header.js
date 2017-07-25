@@ -17,7 +17,9 @@ export default {
         'systemListShow',
         'roleListShow',
         'schoolName',
-        'schoolNameShow'
+        'schoolNameShow',
+        'logoUrl',
+        'logoName'
     ],
     computed: {
         config() {

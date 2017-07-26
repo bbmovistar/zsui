@@ -340,7 +340,8 @@ currentSystem='system name'
 	name:"name",
 	url:"url"
 }'
-
+//是否显示系统切换（默认true）
+:systemListShow='false'
 //角色切换
 currentRole='name'
 :roleList='[
@@ -353,11 +354,19 @@ currentRole='name'
 	name:"name",
 	key:"key"
 }'
-
+//是否显示角色切换（默认true）
+:roleListShow='false'
 //跳转
 :exitUrl='url'
 :homeUrl='url'
-
+//logo图片地址
+logoUrl='xxx.png'
+//logo名称
+logoName='xxxxxx'
+//学校名称
+schoolName='xxxxx'
+//是否显示学校名称（默认false）
+:schoolNameShow='true'
 //用户名称
 :username='name'
 

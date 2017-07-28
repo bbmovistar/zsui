@@ -1,5 +1,4 @@
 # usage 
-qqq
 ~~~bash
 npm install zsui --save
 ~~~

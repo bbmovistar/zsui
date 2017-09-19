@@ -12,6 +12,8 @@ import cascader from '@/components/cascader/cascader.vue'
 import breadcrumb from '@/components/breadcrumb/breadcrumb.vue'
 import breadcrumbItem from '@/components/breadcrumb/breadcrumb-item.vue'
 import checkbox from '@/components/checkbox/checkbox.vue'
+import picshow from '@/components/picShow/picShow.vue'
+import tabBar from '@/components/tabBar/tabBar.vue'
 
 import '@/assets/less/transition.less'
 
@@ -33,7 +35,9 @@ const componentList = [
     cascader,
     breadcrumb,
     breadcrumbItem,
-    checkbox
+    checkbox,
+    picshow,
+    tabBar
 ]
 
 const install = (Vue, options) => {

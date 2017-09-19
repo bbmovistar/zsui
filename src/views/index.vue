@@ -37,12 +37,26 @@
         <zs-button @click='d=!d' text='切换'></zs-button>
         <zs-button text='31413' icon='icon-upload'></zs-button>
         <zs-button text='31413' icon='icon-download'></zs-button>
+        <zs-button text='图片弹窗' @click="imgshow = true"></zs-button>
+        <zs-button text='默认图片弹窗' @click="imgshow1 = true"></zs-button>
+        <zs-picshow :imgUrl="imgUrl" :show='imgshow' @close="imgshow=false"></zs-picshow>
+        <zs-picshow :show='imgshow1' @close="imgshow1=false"></zs-picshow>
+        <zs-tabbar @change='change' :tabData='tabData' style="margin-top:20px;"></zs-tabbar>
     </div>
 </template>
 <script>
     export default {
         data() {
             return {
+                tabData:["tab1","tab2","tab3"],
+                tabData:[
+                    {label: 'aaa', value: 1 , click: true },
+                    {label: 'bbb', value: 2 , click: false},
+                    {label: 'ccc', value: 3 , click: false }
+                ],
+                imgUrl:"http://a3.topitme.com/0/1c/12/1128107705fd5121c0l.jpg",
+                imgshow:false,
+                imgshow1:false,
                 aaa: false,
                 check: false,
                 d:true,
@@ -51,13 +65,16 @@
                 testVal: [],
                 newVal: [],
                 list: [
-                    {label: 'aaa', value: 1},
-                    {label: 'bbb', value: 2}
+                    {label: 'aaa', value: 0},
+                    {label: 'bbb', value: 1}
                 ],
                 haha: 1
             }
         },
         methods: {
+            change($event) {
+                console.log($event)
+            },
             paging($event) {
                 this.current = $event
             },

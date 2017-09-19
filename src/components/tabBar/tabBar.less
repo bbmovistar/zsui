@@ -1,0 +1,23 @@
+.tabs {
+	height: 30px;
+	border-bottom: 1px solid #f7f7f7;
+	font-size: 0;
+	.tab {
+		display: inline-block;
+		font-size: 12px;
+		padding: 7px 20px;
+		background-color: #f7f7f7;
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+		vertical-align: middle;
+		color: #666;
+		cursor: pointer;
+	}
+	.tab+.tab {
+		margin-left: 10px;
+	}
+	.tab.active {
+		background-color: #178aea;
+		color: #fff;
+	}
+}

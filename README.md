@@ -253,8 +253,8 @@ data: [
 		label: 'test1',
 		value: 'test1',
 		children: [
-			{lable: 'test11', value: 'test11'},
-			{lable: 'test12', value: 'test12'},
+			{label: 'test11', value: 'test11'},
+			{label: 'test12', value: 'test12'},
 		]
 	},
 	{
@@ -262,11 +262,11 @@ data: [
 		value: 'test2',
 		children: [
 			{
-				lable: 'test21',
+				label: 'test21',
 				value: 'test21'
 			},
 			{
-				lable: 'test22',
+				label: 'test22',
 				value: 'test22',
 				children: [
 					{label: 'test221', value: '221'}
@@ -296,6 +296,34 @@ handleChange(val){
 	</span>
 </zs-breadcrumb>
 ~~~
+
+## picshow
+示例：
+~~~html
+<zs-picshow :imgUrl="imgUrl" :show='imgshow' @close="imgshow=false"></zs-picshow>
+~~~
+~~~javascript
+imgUrl: "图片地址"   //默认图片为 “暂无图片”
+imgshow: false
+~~~
+
+## tabbar
+示例：
+~~~html
+<zs-tabbar @change='change' :tabData='tabData'></zs-tabbar>
+~~~
+~~~javascript
+tabData:[
+		{label: 'aaa', value: 1 , click: true },
+		{label: 'bbb', value: 2 , click: false},
+		{label: 'ccc', value: 3 , click: false }
+	]
+
+change($event){
+	console.log($event)
+}
+~~~
+
 
 ## main
 ~~~html

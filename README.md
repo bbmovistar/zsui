@@ -5,6 +5,8 @@ npm install zsui --save
 ~~~javscript
 import zsui from 'zsui'
 import 'zsui/dist/style.css'
+import 'zsui/reset.css'
+
 ~~~
 
 # API

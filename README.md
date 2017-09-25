@@ -326,6 +326,21 @@ change($event){
 }
 ~~~
 
+##radio
+示例：
+~~~html
+<zs-radio v-model="testRadio" label="1">选项一</zs-radio>
+<zs-radio v-model="testRadio" label="1">选项一</zs-radio>
+~~~
+
+##radioGroup
+~~~html
+<zs-radio-group v-model="testGroup">
+    <zs-radio label="1">选项一</zs-radio>
+    <zs-radio label="2" >选项二</zs-radio>
+</zs-radio-group>
+~~~
+
 
 ## main
 ~~~html

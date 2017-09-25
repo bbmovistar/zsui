@@ -1,0 +1,53 @@
+.zs-radio {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #333;
+    span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    span.disabled{
+        color: #d9d9d9;
+    }
+    .zs-radio_dot {
+        position: relative;
+        box-sizing: border-box;
+        width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        border: 1px solid #D9D9D9;
+        text-align: center;
+        i {
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #D9D9D9;
+        }
+        input{
+            opacity: 0;
+            outline: none;
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0;
+        }
+    }
+    .zs-radio_dot.actived {
+        border-color: #178AEA;
+        i {
+            background-color: #178AEA;
+        }
+    }
+}
+.zs-radio + .zs-radio{
+    margin-left: 10px;
+}

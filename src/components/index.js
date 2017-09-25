@@ -14,6 +14,8 @@ import breadcrumbItem from '@/components/breadcrumb/breadcrumb-item.vue'
 import checkbox from '@/components/checkbox/checkbox.vue'
 import picshow from '@/components/picShow/picShow.vue'
 import tabBar from '@/components/tabBar/tabBar.vue'
+import radio from '@/components/radio/radio.vue'
+import radioGroup from '@/components/radioGroup/radioGroup.vue'
 
 import '@/assets/less/transition.less'
 
@@ -37,7 +39,9 @@ const componentList = [
     breadcrumbItem,
     checkbox,
     picshow,
-    tabBar
+    tabBar,
+    radio,
+    radioGroup
 ]
 
 const install = (Vue, options) => {

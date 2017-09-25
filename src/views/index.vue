@@ -42,6 +42,14 @@
         <zs-picshow :imgUrl="imgUrl" :show='imgshow' @close="imgshow=false"></zs-picshow>
         <zs-picshow :show='imgshow1' @close="imgshow1=false"></zs-picshow>
         <zs-tabbar @change='change' :tabData='tabData' style="margin-top:20px;"></zs-tabbar>
+
+        <!--<zs-radio v-model="testRadio" label="1">选项一</zs-radio>-->
+        <!--<zs-radio v-model="testRadio" label="2" >选项二</zs-radio>-->
+
+        <zs-radio-group v-model="testGroup">
+            <zs-radio label="1">选项一</zs-radio>
+            <zs-radio label="2" >选项二</zs-radio>
+        </zs-radio-group>
     </div>
 </template>
 <script>
@@ -68,7 +76,9 @@
                     {label: 'aaa', value: 0},
                     {label: 'bbb', value: 1}
                 ],
-                haha: 1
+                haha: 1,
+                testRadio: '1',
+                testGroup: '1'
             }
         },
         methods: {

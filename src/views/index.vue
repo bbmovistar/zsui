@@ -7,7 +7,7 @@
                 <zs-button @click='$toast.error("error")' text='error' icon='icon-export'></zs-button>
                 <zs-button @click='$toast.warn("warn")' text='warn'></zs-button>
                 <zs-button @click='getNext' text='反复' icon='icon-edit'></zs-button>
-                <zs-button @click='zeff' text='反反复复' icon='icon-export'></zs-button>
+                <zs-button @click='zeff2' text='反反复复' icon='icon-export'></zs-button>
             </span>
         </zs-breadcrumb>
         <zs-paging :current='current' :all='15' @paging='paging'></zs-paging>
@@ -99,6 +99,14 @@
                     })
             },
             zeff() {
+                this.$alert.error({
+                    title: '这是啊',
+                    msgTitle: '删除',
+                    msg: '法大师傅大师傅的撒大网大王德瓦达',
+                    canClose: false
+                })
+            },
+             zeff2() {
                 this.$alert.success({
                     title: '这是啊',
                     msgTitle: '删除',

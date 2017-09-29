@@ -10,7 +10,8 @@ export default {
             msgTitle: '标题',
             msg: '信息',
             type: 'success',
-            resolve: null
+            resolve: null,
+            canClose: true
         }
     },
     computed: {

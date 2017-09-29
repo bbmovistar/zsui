@@ -181,8 +181,9 @@ this.$alert({
 	enterText:'确定按钮文本',//default '确定'
 	enterAlign: 'center',//default 'center'
 	type:'success',//default 'success'
-	msgTitle:'标题'//default '标题'
+	msgTitle:'标题',//default '标题'
 	msg:'信息',//default '这是提示信息'
+	canClose: true //default true,(false不显示关闭按钮)
 }).then(res=>{
 	if(res){
 	    console.log('按了确定键')

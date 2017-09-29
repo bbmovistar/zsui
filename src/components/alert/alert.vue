@@ -3,7 +3,7 @@
         <div class='zs-alert' ref='alert'>
             <div class='title'>
                 <i class='line'></i> {{title}}
-                <i class='iconfont icon-close' @click='close'></i>
+                <i class='iconfont icon-close' v-show="canClose" @click='close'></i>
             </div>
             <div class='mainContent-wrapper'>
                 <div class='mainContent'>

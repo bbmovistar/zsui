@@ -51,7 +51,7 @@
             <zs-radio label="2" >选项四</zs-radio>
         </zs-radio-group>
 
-        <zs-tooltip placement="bottom-end" trigger="click" style="margin-left: 200px">
+        <zs-tooltip placement="left-end" trigger="click" style="margin-left: 200px">
             <zs-button text="上左"></zs-button>
             <div slot="content">
                 上左toolTip

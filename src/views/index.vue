@@ -52,9 +52,16 @@
         </zs-radio-group>
 
         <zs-tooltip placement="left-end" trigger="click" style="margin-left: 200px">
-            <zs-button text="上左"></zs-button>
+            <zs-button text="点击"></zs-button>
             <div slot="content">
-                上左toolTip
+                toolTip
+            </div>
+        </zs-tooltip>
+
+        <zs-tooltip placement="top-start" trigger="hover" style="margin-left: 200px">
+            <zs-button text="hover"></zs-button>
+            <div slot="content">
+                toolTip
             </div>
         </zs-tooltip>
     </div>

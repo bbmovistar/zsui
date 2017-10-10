@@ -43,13 +43,20 @@
         <zs-picshow :show='imgshow1' @close="imgshow1=false"></zs-picshow>
         <zs-tabbar @change='change' :tabData='tabData' style="margin-top:20px;"></zs-tabbar>
 
-        <!--<zs-radio v-model="testRadio" label="1">选项一</zs-radio>-->
-        <!--<zs-radio v-model="testRadio" label="2" >选项二</zs-radio>-->
+        <zs-radio v-model="testRadio" label="1">选项一</zs-radio>
+        <zs-radio v-model="testRadio" label="2" >选项二</zs-radio>
 
         <zs-radio-group v-model="testGroup">
-            <zs-radio label="1">选项一</zs-radio>
-            <zs-radio label="2" >选项二</zs-radio>
+            <zs-radio label="1">选项三</zs-radio>
+            <zs-radio label="2" >选项四</zs-radio>
         </zs-radio-group>
+
+        <zs-tooltip placement="bottom-end" trigger="click" style="margin-left: 200px">
+            <zs-button text="上左"></zs-button>
+            <div slot="content">
+                上左toolTip
+            </div>
+        </zs-tooltip>
     </div>
 </template>
 <script>

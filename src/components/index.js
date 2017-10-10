@@ -16,6 +16,7 @@ import picshow from '@/components/picShow/picShow.vue'
 import tabBar from '@/components/tabBar/tabBar.vue'
 import radio from '@/components/radio/radio.vue'
 import radioGroup from '@/components/radioGroup/radioGroup.vue'
+import tooltip from '@/components/tooltip/tooltip.vue'
 
 import '@/assets/less/transition.less'
 
@@ -41,7 +42,8 @@ const componentList = [
     picshow,
     tabBar,
     radio,
-    radioGroup
+    radioGroup,
+    tooltip
 ]
 
 const install = (Vue, options) => {

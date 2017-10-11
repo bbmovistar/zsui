@@ -201,7 +201,6 @@
                 this.data1 = data
                 this.haha = 2
             })
-
         }
     }
 

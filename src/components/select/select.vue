@@ -60,6 +60,18 @@
                 isDown: false
             }
         },
+//        computed: {
+//            list() {
+//                let _list = []
+//                this.optionList.forEach((item) => {
+//                    _list.push({
+//                        label: item.label,
+//                        value: item.value
+//                    })
+//                })
+//                return _list
+//            }
+//        },
         methods: {
             select(item) {
                 this.selectItem = item.label;
@@ -155,7 +167,6 @@
                     } else {
                         this.selectItem = this.value
                     }
-
                 })
             }
         },

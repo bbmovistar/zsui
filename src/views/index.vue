@@ -33,7 +33,8 @@
         <div>
             <zs-paging :current='current' :all='16'></zs-paging>
         </div>
-        <zs-select :optionList="list" v-model="haha" :disabled='d'></zs-select>
+        <zs-select :optionList="list" v-model="haha"></zs-select>
+        <zs-select :optionList="list" v-model="xixi"></zs-select>
         <zs-button @click='d=!d' text='切换'></zs-button>
         <zs-button text='31413' icon='icon-upload'></zs-button>
         <zs-button text='31413' icon='icon-download'></zs-button>
@@ -58,7 +59,7 @@
             </div>
         </zs-tooltip>
 
-        <zs-tooltip placement="top-start" trigger="hover" style="margin-left: 200px">
+        <zs-tooltip placement="top-start" trigger="hover" style="margin-left: 200px" :showArrow="false">
             <zs-button text="hover"></zs-button>
             <div slot="content">
                 toolTip
@@ -87,10 +88,11 @@
                 testVal: [],
                 newVal: [],
                 list: [
-                    {label: 'aaa', value: 0},
-                    {label: 'bbb', value: 1}
+                    {label: 'aaa', value: 1},
+                    {label: 'bbb', value: 2}
                 ],
                 haha: 1,
+                xixi: 2,
                 testRadio: '1',
                 testGroup: '1'
             }
@@ -199,7 +201,7 @@
             this.mockAjax().then((data) => {
                 this.testVal = ['jiangsu', 'nanjing', 'fuzimiao']
                 this.data1 = data
-                this.haha = 2
+//                this.haha = 2
             })
         }
     }

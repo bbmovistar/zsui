@@ -28,6 +28,10 @@ export default{
             type: Boolean,
             default: false
         },
+        showArrow: {
+            type: Boolean,
+            default: true
+        }
     },
     methods: {
         handleShowPopper() {

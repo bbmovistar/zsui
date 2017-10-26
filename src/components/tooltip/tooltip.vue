@@ -8,7 +8,7 @@
                  ref="popper"
                  v-show="!disabled && visible"
             >
-                <div class="zs-tooltip-arrow"></div>
+                <div class="zs-tooltip-arrow" v-if="showArrow"></div>
                 <div class="zs-tooltip-inner"><slot name="content">{{content}}</slot></div>
             </div>
         </transition>

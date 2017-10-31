@@ -151,6 +151,9 @@
                             })
                         }else{
                             this.isFiltering = false
+                            this.list.forEach((item) => {
+                                item.isSelected = false
+                            })
                         }
                     }
                     this.$emit('input', newVal)

@@ -8,7 +8,7 @@ export default {
         },
         imgUrl :{
             type:String,
-            default:''
+            default : ''
         }
     },
     data() {

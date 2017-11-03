@@ -148,7 +148,7 @@ event: {
 this.$toast({
 	msg:'这是信息',
 	type:'success',//success或者error
-	duration:''3000
+	duration:'3000'
 })
 //简易写法
 this.$toast.success('成功')
@@ -227,8 +227,8 @@ this.$alert.warn({msgTitle:'警告',msg:'abc'})
 
 ~~~javascript
 props: {
-	data: //Array, 下拉选项
-	value: //Array, 可设置默认值
+	data: Array, //下拉选项
+	value: Array, //可设置默认值
 	placeholder: String,
 	disabled: //Boolean,
 	allowClear: //Boolean, 是否有删除按钮， 默认为true
@@ -327,14 +327,14 @@ change($event){
 }
 ~~~
 
-##radio
+## radio
 示例：
 ~~~html
 <zs-radio v-model="testRadio" label="1">选项一</zs-radio>
 <zs-radio v-model="testRadio" label="1">选项一</zs-radio>
 ~~~
 
-##radioGroup
+## radioGroup
 ~~~html
 <zs-radio-group v-model="testGroup">
     <zs-radio label="1">选项一</zs-radio>
@@ -342,6 +342,18 @@ change($event){
 </zs-radio-group>
 ~~~
 
+## tooltip
+示例：
+1. placement设置共有 "top" "bottom" "left" "right"四个方向，配合 "start" "end"两个位置
+2. 具名为content的slot内为tooltip中展示的内容
+~~~html
+ <zs-tooltip placement="top-end" :showArrow="false">
+    <span class="iconfont icon-xiugai" @click.stop="handleEditClass(item)"></span>
+    <div slot="content">
+        修改
+    </div>
+ </zs-tooltip>
+ ~~~
 
 ## main
 ~~~html

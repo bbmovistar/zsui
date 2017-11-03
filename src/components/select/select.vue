@@ -1,15 +1,16 @@
 <template>
     <div class="zs-select">
-        <div class="zs-select_box" @click.stop="isDown = !isDown">
+        <div class="zs-select_box" @click.stop="toggleDropdown">
             <input type="text" class="zs-select_input" :placeholder="disabled? '' : placeholder" :disabled="disabled" :readonly="readonly"
                 v-model="selectItem" @blur="handleBlur">
             <i class="zs-select_icon iconfont icon-select-arrow-down" :class="{opened: isDown}" v-if="!disabled"></i>
         </div>
         <div class="zs-select_dropDown_box" v-show="isDown && !disabled" :class="{isDown: isDown}">
-            <ul v-if="list.length <= 0" class="zs-select-_dropDown_menu">
+            <ul v-if="list.length <= 0 || (filterList.length <= 0 && isFiltering)" class="zs-select-_dropDown_menu">
                 <li>暂无数据</li>
             </ul>
-            <zs-options v-if="list.length > 0" @select="select" :optionList="list"></zs-options>
+            <zs-options v-if="list.length > 0" @select="select" :optionList="list" v-show="!isFiltering"></zs-options>
+            <zs-options v-if="list.length > 0" @select="select" :optionList="filterList" v-show="filterable && isFiltering"></zs-options>
         </div>
     </div>
 </template>
@@ -57,10 +58,12 @@
             return {
                 selectItem: '',
                 list: this.optionList,
-                isDown: false
+                isDown: false,
+                isFiltering: false,
+                filterList: []
             }
         },
-//        computed: {
+        computed: {
 //            list() {
 //                let _list = []
 //                this.optionList.forEach((item) => {
@@ -71,8 +74,15 @@
 //                })
 //                return _list
 //            }
-//        },
+
+        },
         methods: {
+            toggleDropdown() {
+                this.isDown = !this.isDown
+                if(this.isDown){
+                    this.isFiltering = false
+                }
+            },
             select(item) {
                 this.selectItem = item.label;
                 if (this.readonly) {
@@ -131,12 +141,18 @@
                     if (this.filterable) {
                         this.list = this.optionList
                         if (newVal !== '') {
-                            this.list = this.list.filter(function (i) {
+                            this.isFiltering = true
+                            this.filterList = this.list.filter(function (i) {
                                 if (i.label.indexOf(newVal) > -1) {
                                     return true
                                 } else {
                                     return false
                                 }
+                            })
+                        }else{
+                            this.isFiltering = false
+                            this.list.forEach((item) => {
+                                item.isSelected = false
                             })
                         }
                     }

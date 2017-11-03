@@ -34,7 +34,7 @@
             <zs-paging :current='current' :all='16'></zs-paging>
         </div>
         <zs-select :optionList="list" v-model="haha"></zs-select>
-        <zs-select :optionList="list" v-model="xixi"></zs-select>
+        <zs-select :optionList="list" v-model="xixi" :readonly="false" :filterable="true"></zs-select>
         <zs-button @click='d=!d' text='切换'></zs-button>
         <zs-button text='31413' icon='icon-upload'></zs-button>
         <zs-button text='31413' icon='icon-download'></zs-button>
@@ -89,10 +89,11 @@
                 newVal: [],
                 list: [
                     {label: 'aaa', value: 1},
-                    {label: 'bbb', value: 2}
+                    {label: 'bbb', value: 2},
+                    {label: 'aba', value: 3}
                 ],
                 haha: 1,
-                xixi: 2,
+                xixi: 'aaa',
                 testRadio: '1',
                 testGroup: '1'
             }

@@ -32,8 +32,9 @@ export default {
     },
 
     methods: {
+
         click() {
-            if (this.color === 'disable') {
+            if (this.type === 'disable') {
                 return false
             }
             this.$emit('click')

@@ -2,7 +2,7 @@
     <transition name='fade'>
         <div class="mask" v-if="visible" @click='close'>
             <div class="alertWarp">
-                <img :src='imgUrl' alt="">
+                <img :src='imgUrl' alt="" ref="imgSrc">
             </div>
             <span class='iconfont icon-close' @click='close'></span>
         </div>

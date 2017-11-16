@@ -8,7 +8,7 @@ export default {
         },
         imgUrl :{
             type:String,
-            default : '/static/1111.png'
+            default : 'g'
         }
     },
     data() {
@@ -24,6 +24,19 @@ export default {
     methods: {
         close() {
             this.$emit('close')
-        } 
+        }
+    },
+    mounted(){
+        let vm = this
+        window.onmousewheel = function (e) {
+            if (e.wheelDelta < 0) {
+                if (vm.$refs.imgSrc.height>50){
+                    vm.$refs.imgSrc.height -= 10
+                }
+            } else {
+                vm.$refs.imgSrc.height = vm.$refs.imgSrc.clientHeight
+                vm.$refs.imgSrc.height += 10
+            }
+        }
     }
 }

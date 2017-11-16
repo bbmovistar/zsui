@@ -5,9 +5,9 @@
             <zs-breadcrumb-item>bbb</zs-breadcrumb-item>
             <span slot='right-option'>
                 <zs-button @click='$toast.error("error")' text='error' icon='icon-export'></zs-button>
-                <zs-button @click='$toast.warn("warn")' text='warn'></zs-button>
+                <zs-button @click='$toast.warn("warn")' type="disable" text='warn'></zs-button>
                 <zs-button @click='getNext' text='反复' icon='icon-edit'></zs-button>
-                <zs-button @click='zeff2' text='反反复复' icon='icon-export'></zs-button>
+                <zs-button @click='zeff2'  text='反反复复' icon='icon-export'></zs-button>
             </span>
         </zs-breadcrumb>
         <zs-paging :current='current' :all='15' @paging='paging'></zs-paging>
@@ -19,7 +19,7 @@
             </div>
             <div slot='btn'>
                 <zs-button text='取消'></zs-button>
-                <zs-button text='确定' @click='aaa=false'></zs-button>
+                <zs-button text='确定'  @click='aaa=false'></zs-button>
             </div>
         </zs-dialog>
         <zs-button @click='$toast.error("error")' text='error' icon='icon-export'></zs-button>
@@ -29,7 +29,7 @@
         <zs-button @click='zeff' text='反反复复' icon='icon-export'></zs-button>
         <!--<zs-cascader :data="data1" v-model="testVal"></zs-cascader>-->
         <zs-checkbox :check='check' @click='check=!check'></zs-checkbox>
-        <zs-button widthType='mini' text='fasdf'></zs-button>
+        <zs-button widthType='mini' text='widthType'></zs-button>
         <div>
             <zs-paging :current='current' :all='16'></zs-paging>
         </div>
@@ -65,12 +65,18 @@
                 toolTip
             </div>
         </zs-tooltip>
+        <div style="margin-top: 20px;">
+            <zs-button @click='btnType="blue"' text='让它能点击' ></zs-button>
+            <zs-button @click='$toast.warn("warn")' :type="btnType" text='点击弹窗'></zs-button>
+            <zs-button @click='btnType="disable"' text='让它不能点击' ></zs-button>
+        </div>
     </div>
 </template>
 <script>
     export default {
         data() {
             return {
+                btnType:'disable',
                 tabData:["tab1","tab2","tab3"],
                 tabData:[
                     {label: 'aaa', value: 1 , click: true },
@@ -205,6 +211,7 @@
 //                this.haha = 2
             })
         }
+
     }
 
 </script>
